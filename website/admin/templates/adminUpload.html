@@ -1,0 +1,73 @@
+{% extends "layouts/adminBase.html" %} {% block title %} Trade With TayeOJ || Adminstration Home
+{% endblock %} {% block content %}
+<div class="main-panel">
+    <div class="content-wrapper">
+      <div class="page-header">
+        <h3 class="page-title"> Upload Product </h3>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#"><i class="mdi mdi-home"/></i></a></li>
+            <li class="breadcrumb-item"><a href="#">Product</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Upload Product</li>
+          </ol>
+        </nav>
+      </div>
+      <div class="row">
+       
+        <div class="col-12 grid-margin stretch-card">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Upload Product</h4>
+              <form action="#" enctype="multipart/form-data" method="post" class="forms-sample">
+                <div class="form-group">
+                  <label for="productCategry">Product Category</label>
+                  <select name="productCategry" class="form-control" id="productCategry">
+                    <option value="">None</option>
+                    <option value="vehicles">Vehicles</option>
+                    <option value="fashion&lifestyle">Fashion & Lifestyle</option>
+                    <option value="teddy_bears">Teddy Bears</option>
+                    <option value="food&beverages">Food & Beverages</option>
+                    <option value="electronics&technology">Electronics & Technology</option>
+                    <option value="indurial&suuplies">Office & Industral Supplies</option>
+                    <option value="agriculture&agro_allied">Agriculture & Agro-Allied Services</option>
+                    <option value="constructed&real_estate">Construction & Real Estate</option>
+                    <option value="energy_solution">Energy Solution</option>
+                    <option value="oil&gas">Oil & Gas</option>
+                    <option value="fruits&veges">Fruits & Veges</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="productTitle">Product Title</label>
+                  <input type="text" name="productTitle" class="form-control" id="productTitle" placeholder="E.g Brown Long sleeve for men">
+                </div>
+                <div class="form-group">
+                  <label for="productImage">Product Image</label>
+                  <input type="file" name="productImage" class="form-control" id="productImage" placeholder="Name">
+                </div>
+                <div class="form-group">
+                  <label for="productDesc">Product Desc</label>
+                  <textarea class="form-control" name="productDesc" id="productDesc" rows="4"></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="productPrice">Product Price</label>
+                  <input type="number" class="form-control" name="productPrice" id="productPrice" placeholder="E.g 15000">
+                </div>
+                <button type="submit" style="float: inline-end;" class="btn btn-primary mr-2">Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- content-wrapper ends -->
+    <!-- partial:../../partials/_footer.html -->
+    <footer class="footer">
+      <div class="d-sm-flex justify-content-center justify-content-sm-between">
+        <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © bootstrapdash.com 2020</span>
+        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Free <a href="https://www.bootstrapdash.com/bootstrap-admin-template/" target="_blank">Bootstrap admin templates</a> from Bootstrapdash.com</span>
+      </div>
+    </footer>
+    <!-- partial -->
+  </div>
+{% endblock %}

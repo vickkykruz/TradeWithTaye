@@ -1,0 +1,127 @@
+{% extends "layouts/base.html" %}
+{% block title %}
+{% if title %}
+{{ title }}
+{% else %}
+Joam Collections || Were you shop for quality and afforable wears
+{% endif %}
+{% endblock %}
+
+{% block content %}
+<section class="containerr">
+  <div class="shirt-container">
+    <div class="side-container">
+
+      <div class="item-display">
+        <div class="item-sample">
+          <div class="container">
+
+            <div>
+              <h1>Checkout</h1>
+              <hr>
+              <h3 style="margin-top: 10px;">Personal Information</h3>
+
+              <form action="#" class="signin-form" method="POST">
+                <div style="margin-bottom: 10px;">
+                  <label for="inputName" class="form-label">Name</label>
+                  <input type="text" class="form-control" id="inputName" value="{{ user_data.name }}" disabled>
+                </div>
+                <div style="margin-bottom: 10px;">
+                  <label for="exampleInputEmail1" class="form-label">Email Address</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" {{ 'disabled' if user_data.email
+                    else '' }} value="{{ user_data.email if user_data.email else '' }}" placeholder="mail@example.com">
+                </div>
+                <div style="margin-bottom: 10px;">
+                  <label for="inputPhoneNumber" class="form-label">Phone Number</label>
+                  <input type="text" class="form-control" id="inputPhoneNumber" {{ 'disabled' if user_data.phone_number
+                    else '' }} value="{{ user_data.phone_number if user_data.phone_number else '' }}"
+                    placeholder="E.g 0901237649">
+                </div>
+                <div style="margin-bottom: 10px;">
+                  <label for="inputState" class="form-label">State</label>
+                  <input type="text" class="form-control" id="inputState" placeholder="E.g Lagos State" required>
+                </div>
+                <div style="margin-bottom: 10px;">
+                  <label for="inputCity" class="form-label">City/Town</label>
+                  <input type="text" class="form-control" id="inputCity" placeholder="E.g Ikeja" required>
+                  <div style="margin-bottom: 10px;">
+                    <label for="inputAddress" class="form-label">Address</label>
+                    <input type="text" class="form-control" id="inputAddress" placeholder="E.g Redisdent Home Address">
+                  </div>
+                  <!-- Proceed or clear cart -->
+                  <div class="carts-btn-checkout">
+                    <a type="submit"> SUBMIT</a>
+                  </div>
+
+                </div>
+              </form>
+
+            </div>
+          </div>
+
+
+        </div>
+        <div class="asidebar desktop-asidebar">
+          <div class="cartbox">
+            <div class="cartbox-title">
+              <h3>Shopping Cart</h3>
+            </div>
+            <hr>
+            <div class="cartbox-body">
+              <div id="asideBarTotalAmt"></div>
+              <hr>
+              <div class="cartbox-items">
+                <h3>Item(s) Selected</h3>
+                <div id="asideBarItemDetails"></div>
+              </div>
+            </div>
+          </div>
+          <div class="category-list">
+            <i class='bx bx-x' id="close-icon"></i>
+            <li><a href="">Shirt</a></li>
+            <li><a href="">Vintage</a></li>
+            <li><a href="">Trousers</a></li>
+            <li><a href="">Native Wears</a></li>
+            <li><a href="">Female Wears</a></li>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+
+    <!-- Asidebar mobile responsive -->
+    <div class="asidebar mobile-asidebar">
+      <div class="cartbox">
+        <div class="cartbox-title">
+          <h3>Shopping Cart</h3>
+        </div>
+        <hr>
+        <div class="cartbox-body">
+          <div id="asideBarTotalAmt"></div>
+          <hr>
+          <div class="cartbox-items">
+            <h3>Item(s) Selected</h3>
+            <div id="asideBarItemDetails"></div>
+          </div>
+        </div>
+        <div class="cartbox-footer">
+          {% if session_status %}
+          <a id="openModalBtn" href="javascript:void(0);"><i class='bx bx-cart-alt'></i> Proceed</a>
+          {% else %}
+          <a href="/auth/login"><i class='bx bx-cart-alt'></i> Proceed</a>
+          {% endif %}
+          <a href="javascript:void(0);"> &times; Cancel</a>
+        </div>
+      </div>
+      <div class="category-list">
+        <li><a href="">Shirt</a></li>
+        <li><a href="">Vintage</a></li>
+        <li><a href="">Trousers</a></li>
+        <li><a href="">Native Wears</a></li>
+        <li><a href="">Female Wears</a></li>
+      </div>
+    </div>
+</section>
+{% endblock %}

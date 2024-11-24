@@ -1,0 +1,329 @@
+{% extends "layouts/adminBase.html" %} {% block title %} Trade With TayeOJ || Adminstration Home
+{% endblock %} {% block content %}
+<div class="main-panel">
+    <div class="content-wrapper">
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          {% for category, message in messages %}
+            {% if category == 'error' %}
+              <div class="alert alert-danger alter-dismissable fade show" role="alert"/>
+                {{ message }}
+                <button type="button" class="close" data-dismiss="alert"/>
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+            {% else %}
+              <div class="alert alert-success alter-dismissable fade show" role="alert"/>
+                {{ message }}
+                <button type="button" class="close" data-dismiss="alert"/>
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+
+      {% if table == "Clients" %}
+
+      <div class="page-header">
+        <h3 class="page-title">{{ table }}</h3>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            {% if table == "Clients" %}
+            <li class="breadcrumb-item"><a href="#"><i class="mdi mdi-home"></i></a></li>
+            <li class="breadcrumb-item active" aria-current="page">Clients</li>
+            {% endif %}
+          </ol>
+        </nav>
+      </div>
+      <div class="row">
+        
+
+        <div class="col-lg-12 grid-margin stretch-card">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">{{ table }} Table</h4>
+              <div class="table-responsive">
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th>S/N</th>
+                      <th>Client's Name</th>
+                      <th>Vaild Email / Phone No</th>
+                      <th>Register Date</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% if client_records %}
+                        {% for client in client_records %}
+                        <tr>
+			   <td><a href="/admin/page/client/{{ client.bind_id }}">{{ loop.index }}</a></td>
+                            <td><a href="/admin/page/client/{{ client.bind_id }}">{{ client.name }}</a></td>
+                            {% if client.email %}
+                                <td><a href="/admin/page/client/{{ client.bind_id }}">{{ client.email }}</a></td>
+                            {% else %}
+                                <td><a href="/admin/page/client/{{ client.bind_id }}">{{ client.phone_number }}</a></td>
+                            {% endif %}
+			    <td><a href="/admin/page/client/{{ client.bind_id }}">{{ client.create_date }}</a></td>
+                        </tr>
+                        {% endfor %}
+                    {% else %}
+                    <tr>
+                        <td>No record found ): No client was registered today</td>
+                    </tr>
+                    {% endif %}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      {% elif table == "Product" %}
+      <div class="page-header">
+        <h3 class="page-title">{{ table }}</h3>
+	<nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            {% if table == "Product" %}
+	    <li class="breadcrumb-item"><a href="#"><i class="mdi mdi-home"></i></a></li>
+	    <li class="breadcrumb-item"><a href="#">Product</a></li>
+	    <li class="breadcrumb-item active" aria-current="page">Product Lists</li>
+	    {% endif %}
+	  </ol>
+	</nav>
+      </div>
+      <div class="row">
+      
+        <div class="col-lg-12 grid-margin stretch-card">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">{{ table }} Table</h4>
+              <div class="table-responsive">
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th>S/N</th>
+                      <th>Product Image</th>
+		      <th>Product Category</th>
+                      <th>Product Title</th>
+		      <th>Market Status</th>
+                      <th>Register Date</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% if product_records %}
+                        {% for product in product_records %}
+                        <tr>
+                           <td><a href="/admin/page/product/{{ product.item_id }}">{{ loop.index }}</a></td>
+			   <td><a href="/admin/page/product/{{ product.item_id }}"><img src="{{ url_for('static', filename='uploads/' + product.product_image) }}" style="width: 40px; height:40px; object-fit: cover;" alt="product Img" /></a></td>
+			   <td><a href="/admin/page/product/{{ product.item_id }}">{{ product.product_category }}</a></td>
+                           <td><a href="/admin/page/product/{{ product.item_id }}">{{ product.product_title }}</a></td>
+			   {% if product.market_status == "Available" %}
+                             <td><a class="text-success" href="/admin/page/product/{{ product.item_id }}">{{ product.market_status }}</a></td>
+			   {% else %}
+			     <td class="text-danger"><a href="/admin/page/product/{{ product.item_id }}">{{ product.market_status }}</a></td>
+			   {% endif %}
+                           <td><a href="/admin/page/product/{{ product.item_id }}">{{ product.create_date }}</a></td>
+                        </tr>
+                        {% endfor %}
+                    {% else %}
+                    <tr>
+                        <td class="text-danger">No record found ): No product was uploaded today</td>
+                    </tr>
+                    {% endif %}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      {% elif table == "Inbox" %}
+      <div class="page-header">
+        <h3 class="page-title">{{ table }}</h3>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            {% if table == "Inbox" %}
+            <li class="breadcrumb-item"><a href="#"><i class="mdi mdi-home"></i></a></li>
+            <li class="breadcrumb-item active" aria-current="page">Inboxs</li>
+            {% endif %}
+          </ol>
+        </nav>
+      </div>
+      <div class="row">
+
+        <div class="col-lg-12 grid-margin stretch-card">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">{{ table }} Table</h4>
+              <div class="table-responsive">
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th>S/N</th>
+                      <th>Ticket Number</th>
+                      <th>Sender Name</th>
+                      <th>Sender Eamil</th>
+                      <th>Sent Date</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% if inbox_records %}
+                        {% for inbox in inbox_records %}
+                        <tr>
+                           <td><a href="/admin/page/inbox/{{ inbox.ticket_number }}">{{ loop.index }}</a></td>
+                           <td><a href="/admin/page/inbox/{{ inbox.ticket_number }}">{{ inbox.ticket_number }}</a></td>
+                           <td><a href="/admin/page/inbox/{{ inbox.ticket_number }}">{{ inbox.sender_name }}</a></td>
+                           <td><a href="/admin/page/inbox/{{ inbox.ticket_number }}">{{ inbox.sender_email }}</a></td>
+                           <td><a href="/admin/page/inbox/{{ inbox.ticket_number }}">{{ inbox.create_date }}</a></td>
+                        </tr>
+                        {% endfor %}
+                    {% else %}
+                    <tr>
+                        <td class="text-danger">No record found ): No Inbox was sent today</td>
+                    </tr>
+                    {% endif %}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      {% elif table == "Transcation History" %}
+      <div class="page-header">
+        <h3 class="page-title">{{ table }}</h3>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            {% if table == "Transcation History" %}
+            <li class="breadcrumb-item"><a href="#"><i class="mdi mdi-home"></i></a></li>
+            <li class="breadcrumb-item active" aria-current="page">Transcation History</li>
+            {% endif %}
+          </ol>
+        </nav>
+      </div>
+
+      <div class="row">
+
+        <div class="col-lg-12 grid-margin stretch-card">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">{{ table }} Table</h4>
+              <div class="table-responsive">
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th>S/N</th>
+                      <th>Transcation Ref</th>
+                      <th>Client's Name</th>
+                      <th>Transcation Amount</th>
+		      <th>Tanscation Status
+                      <th>Date</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% if transaction_records %}
+                        {% for transaction in transaction_records %}
+                        <tr>
+                           <td><a href="/admin/page/records/transcation/{{ transaction.order_no }}">{{ loop.index }}</a></td>
+                           <td><a href="/admin/page/records/transcation/{{ transaction.order_no }}">{{ transaction.transcation_ref }}</a></td>
+                           <td><a href="/admin/page/records/transcation/{{ transaction.order_no }}">{{ transaction.client_name }}</a></td>
+                           <td><a href="/admin/page/records/transcation/{{ transaction.order_no }}">&#8358; {{ transaction.transcation_amt }}</a></td>
+			   {% if transaction.transcation_status == "success" %}
+			     <td><a href="/admin/page/records/transcation/{{ transaction.order_no }}"><div class="badge badge-outline-success">Approved</div></a></td>
+			   {% else %}
+			     <td><a href="/admin/page/records/transcation/{{ transaction.order_no }}"><div class="badge badge-outline-danger">Rejected</div></a></td>
+			   {% endif %}
+			   <td><a href="/admin/page/records/transcation/{{ transaction.order_no }}">{{ transaction.transcation_date }}</a></td>
+                        </tr>
+                        {% endfor %}
+                    {% else %}
+                    <tr>
+                        <td class="text-danger">No record found ): No Transcation was made today</td>
+                    </tr>
+                    {% endif %}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      {% elif table == "Order Records" %}
+        <div class="page-header">
+          <h3 class="page-title">{{ table }}</h3>
+	  <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              {% if table == "Order Records" %}
+	      <li class="breadcrumb-item"><a href="#"><i class="mdi mdi-home"></i></a></li>
+	      <li class="breadcrumb-item active" aria-current="page">Order Records</li>
+	      {% endif %}
+	    </ol>
+	  </nav>
+	</div>
+
+	<div class="row">
+
+        <div class="col-lg-12 grid-margin stretch-card">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">{{ table }} Table</h4>
+              <div class="table-responsive">
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th>S/N</th>
+                      <th>Client's Name</th>
+                      <th>Total Amount</th>
+                      <th>Order Status
+                      <th>Date</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% if order_data %}
+		      {% for order in order_data %}
+		      <tr>
+                        <td><a href="/admin/page/records/order/{{ order.order_no }}">{{ loop.index }}</a></td>
+			<td><a href="/admin/page/records/order/{{ order.order_no }}">{{ order.clientName }}</a></td>
+			<td><a href="/admin/page/records/order/{{ order.order_no }}">&#8358; {{ order.totalAmt }}</a></td>
+			{% if order.paymentStatus == "not paid" %}
+			  <td><a href="/admin/page/records/order/{{ order.order_no }}"><div class="badge badge-outline-warning">Pending</div></a></td>
+			{% elif order.paymentStatus == "success" %}
+			  <td><a href="/admin/page/records/order/{{ order.order_no }}"><div class="badge badge-outline-success">Approved</div></a></td>
+			{% else %}
+			<td><a href="/admin/page/records/order/{{ order.order_no }}"><div class="badge badge-outline-danger">Rejected</div></a></td>
+                        {% endif %}
+                        <td><a href="/admin/page/records/order/{{ order.order_no }}">{{ order.paymentDate }}</a></td>
+                      </tr>
+                      {% endfor %}
+                    {% else %}
+                    <tr>
+                        <td class="text-danger">No record found ): No order was placed today</td>
+                    </tr>
+                    {% endif %}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      {% endif %}
+    </div>
+    <!-- content-wrapper ends -->
+    <!-- partial:../../partials/_footer.html -->
+    <footer class="footer">
+      <div class="d-sm-flex justify-content-center justify-content-sm-between">
+        <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © joamcollection.com 2024</span>
+        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Designed and Implementated by <a href="https://github.com/vickkykruz" target="_blank" rel="noopener noreferrer">vickkykruz</a></span>
+      </div>
+    </footer>
+    <!-- partial -->
+</div>
+{% endblock %}

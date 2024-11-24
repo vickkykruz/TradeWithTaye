@@ -1,0 +1,469 @@
+{# PRODUCT SECTION START #}
+    <section class="products" id="products">
+      <div class="heading">
+        <h2>Our Products</h2>
+      </div>
+
+      <!-- Shirts -->
+
+      <div class="product-container" id="shirts">
+        <!-- shirt product 1 -->
+        <div class="product-content">
+          <div class="img-container">
+	    <img src="{{ url_for('views.static', filename='images/Men_shirt/Men_shirt1.png') }}" alt="" />
+            <a href="" class="cart-btn"
+              ><p><i class="bx bxs-cart"></i>Add to Cart</p></a
+            >
+          </div>
+          <h3>Cooperate Shirts for men</h3>
+          <h4>#7000</h4>
+        </div>
+        <!--shirt product 2 -->
+        <div class="product-content">
+          <div class="img-container">
+            <img src="{{ url_for('views.static', filename='images/Men_shirt/Men_shirt2.png') }}" alt="" />
+            <a href="" class="cart-btn"
+              ><p><i class="bx bxs-cart"></i>Add to Cart</p></a
+            >
+          </div>
+          <h3>Cooperate Shirts for men</h3>
+          <h4>#7000</h4>
+        </div>
+        <!-- shirt product 3 -->
+        <div class="product-content">
+          <div class="img-container">
+            <img src="{{ url_for('views.static', filename='images/Men_shirt/Men_shirt3.png') }}" alt="" />
+            <a href="" class="cart-btn"
+              ><p><i class="bx bxs-cart"></i>Add to Cart</p></a
+            >
+          </div>
+          <h3>Cooperate Shirts for men</h3>
+          <h4>#7000</h4>
+        </div>
+        <!--shirt product 4 -->
+        <div class="product-content">
+          <div class="img-container">
+            <img src="{{ url_for('views.static', filename='images/Men_shirt/Men_shirt4.png') }}" alt="" />
+            <a href="" class="cart-btn"
+              ><p><i class="bx bxs-cart"></i>Add to Cart</p></a
+            >
+          </div>
+          <h3>Cooperate Shirts for men</h3>
+          <h4>#7000</h4>
+        </div>
+        <!--shirt product 5 -->
+        <div class="product-content">
+          <div class="img-container">
+            <img src="{{ url_for('views.static', filename='images/Men_shirt/Men_shirt5.png') }}" alt="" />
+            <a href="" class="cart-btn"
+              ><p><i class="bx bxs-cart"></i>Add to Cart</p></a
+            >
+          </div>
+          <h3>Cooperate Shirts for men</h3>
+          <h4>#7000</h4>
+        </div>
+        <!--shirt product 6 -->
+        <div class="product-content">
+          <div class="img-container">
+            <img src="{{ url_for('views.static', filename='images/Men_shirt/Men_shirt6.png') }}" alt="" />
+            <a href="" class="cart-btn"
+              ><p><i class="bx bxs-cart"></i>Add to Cart</p></a
+            >
+          </div>
+          <h3>Cooperate Shirts for men</h3>
+          <h4>#7000</h4>
+        </div>
+        <!--shirt product 7 -->
+        <div class="product-content">
+          <div class="img-container">
+            <img src="{{ url_for('views.static', filename='images/Men_shirt/Men_shirt7.png') }}" alt="" />
+            <a href="" class="cart-btn"
+              ><p><i class="bx bxs-cart"></i>Add to Cart</p></a
+            >
+          </div>
+          <h3>Cooperate Shirts for men</h3>
+          <h4>#7000</h4>
+        </div>
+        <!--shirt product 8 -->
+        <div class="product-content">
+          <div class="img-container">
+            <img src="{{ url_for('views.static', filename='images/Men_shirt/Men_shirt8.png') }}" alt="" />
+            <a href="" class="cart-btn"
+              ><p><i class="bx bxs-cart"></i>Add to Cart</p></a
+            >
+          </div>
+          <h3>Cooperate Shirts for men</h3>
+          <h4>#7000</h4>
+        </div>
+
+        <!--shirt product 9 -->
+        <div class="product-content">
+          <div class="img-container">
+	    <img src="{{ url_for('views.static', filename='images/F_Men_shirt/F_Men_shirt7.png') }}" alt="" />
+            <a href="" class="cart-btn"
+              ><p><i class="bx bxs-cart"></i>Add to Cart</p></a
+            >
+          </div>
+          <h3>Cooperate Shirts for men</h3>
+          <h4>#7000</h4>
+        </div>
+        <!--shirt product 10 -->
+        <div class="product-content">
+          <div class="img-container">
+            <img src="{{ url_for('views.static', filename='images/F_Men_shirt/F_Men_shirt9.png') }}" alt="" />
+            <a href="" class="cart-btn"
+              ><p><i class="bx bxs-cart"></i>Add to Cart</p></a
+            >
+          </div>
+          <h3>Cooperate Shirts for men</h3>
+          <h4>#7000</h4>
+        </div>
+        <!--shirt product 11 -->
+        <div class="product-content">
+          <div class="img-container">
+            <img src="{{ url_for('views.static', filename='images/F_Men_shirt/F_Men_shirt8.png') }}" alt="" />
+            <a href="" class="cart-btn"
+              ><p><i class="bx bxs-cart"></i>Add to Cart</p></a
+            >
+          </div>
+          <h3>Cooperate Shirts for men</h3>
+          <h4>#7000</h4>
+        </div>
+
+        <!--shirt product 12 -->
+        <div class="product-content">
+          <div class="img-container">
+            <img src="{{ url_for('views.static', filename='images/F_Men_shirt/F_Men_shirt6.png') }}" alt="" />
+            <a href="" class="cart-btn"
+              ><p><i class="bx bxs-cart"></i>Add to Cart</p></a
+            >
+          </div>
+          <h3>Cooperate Shirts for men</h3>
+          <h4>#7000</h4>
+        </div>
+
+        <!--shirt product 13 -->
+        <div class="product-content">
+          <div class="img-container">
+            <img src="{{ url_for('views.static', filename='images/Men_shirt/Men_shirt8.png') }}" alt="" />
+            <a href="" class="cart-btn"
+              ><p><i class="bx bxs-cart"></i>Add to Cart</p></a
+            >
+          </div>
+          <h3>Cooperate Shirts for men</h3>
+          <h4>#7000</h4>
+        </div>
+        <!--shirt product 14 -->
+        <div class="product-content">
+          <div class="img-container">
+            <img src="{{ url_for('views.static', filename='images/Men_shirt/Men_shirt11.png') }}" alt="" />
+            <a href="" class="cart-btn"
+              ><p><i class="bx bxs-cart"></i>Add to Cart</p></a
+            >
+          </div>
+          <h3>Cooperate Shirts for men</h3>
+          <h4>#7000</h4>
+        </div>
+        <!--shirt product 15 -->
+        <div class="product-content">
+          <div class="img-container">
+            <img src="{{ url_for('views.static', filename='images/F_Men_shirt/F_Men_shirt11.png') }}" alt="" />
+            <a href="" class="cart-btn"
+              ><p><i class="bx bxs-cart"></i>Add to Cart</p></a
+            >
+          </div>
+          <h3>Cooperate Shirts for men</h3>
+          <h4>#7000</h4>
+        </div>
+        <!--shirt product 16 -->
+        <div class="product-content">
+          <div class="img-container">
+            <img src="{{ url_for('views.static', filename='images/F_Men_shirt/F_Men_shirt7.png') }}" alt="" />
+            <a href="" class="cart-btn"
+              ><p><i class="bx bxs-cart"></i>Add to Cart</p></a
+            >
+          </div>
+          <h3>Cooperate Shirts for men</h3>
+          <h4>#7000</h4>
+        </div>
+        <!--shirt product 17 -->
+        <div class="product-content">
+          <div class="img-container">
+            <img src="{{ url_for('views.static', filename='images/F_Men_shirt/F_Men_shirt4.png') }}" alt="" />
+            <a href="" class="cart-btn"
+              ><p><i class="bx bxs-cart"></i>Add to Cart</p></a
+            >
+          </div>
+          <h3>Cooperate Shirts for men</h3>
+          <h4>#7000</h4>
+        </div>
+        <!--shirt product 18 -->
+        <div class="product-content">
+          <div class="img-container">
+            <img src="{{ url_for('views.static', filename='images/F_Men_shirt/F_Men_shirt3.png') }}" alt="" />
+            <a href="" class="cart-btn"
+              ><p><i class="bx bxs-cart"></i>Add to Cart</p></a
+            >
+          </div>
+          <h3>Cooperate Shirts for men</h3>
+          <h4>#7000</h4>
+        </div>
+      </div>
+
+      <!--Vintage Shirts -->
+
+      <div class="product-container" id="vintage">
+        <!-- Vintage product 1 -->
+        <div class="product-content">
+          <div class="img-container">
+            <img src="{{ url_for('views.static', filename='images/F_Men_shirt/F_Men_shirt8.png') }}" alt="" />
+            <a href="" class="cart-btn"
+              ><p><i class="bx bxs-cart"></i>Add to Cart</p></a
+            >
+          </div>
+          <h3>Vintage Shirt</h3>
+          <h4>#6000</h4>
+        </div>
+        <!--Vintage product 2 -->
+        <div class="product-content">
+          <div class="img-container">
+            <img src="Vintage 2.png" alt="" />
+            <a href="" class="cart-btn"
+              ><p><i class="bx bxs-cart"></i>Add to Cart</p></a
+            >
+          </div>
+          <h3>Vintage Shirt</h3>
+          <h4>#6000</h4>
+        </div>
+        <!-- Vintage product 3 -->
+        <div class="product-content">
+          <div class="img-container">
+            <img src="Vintage 3.png" alt="" />
+            <a href="" class="cart-btn"
+              ><p><i class="bx bxs-cart"></i>Add to Cart</p></a
+            >
+          </div>
+          <h3>Vintage Shirt</h3>
+          <h4>#6000</h4>
+        </div>
+        <!--Vintage product 4 -->
+        <div class="product-content">
+          <div class="img-container">
+            <img src="Vintage 4.png" alt="" />
+            <a href="" class="cart-btn"
+              ><p><i class="bx bxs-cart"></i>Add to Cart</p></a
+            >
+          </div>
+          <h3>Vintage Shirt</h3>
+          <h4>#6000</h4>
+        </div>
+        <!--Vintage product 5 -->
+        <div class="product-content">
+          <div class="img-container">
+            <img src="Vintage 5.png" alt="" />
+            <a href="" class="cart-btn"
+              ><p><i class="bx bxs-cart"></i>Add to Cart</p></a
+            >
+          </div>
+          <h3>Vintage Shirt</h3>
+          <h4>#7000</h4>
+        </div>
+        <!--Vintage product 6 -->
+        <div class="product-content">
+          <div class="img-container">
+            <img src="Vintage 6.png" alt="" />
+            <a href="" class="cart-btn"
+              ><p><i class="bx bxs-cart"></i>Add to Cart</p></a
+            >
+          </div>
+          <h3>Vintage Shirt</h3>
+          <h4>#6000</h4>
+        </div>
+        <!--Vintage product 7 -->
+        <div class="product-content">
+          <div class="img-container">
+            <img src="Vintage dress.jpg" alt="" />
+            <a href="" class="cart-btn"
+              ><p><i class="bx bxs-cart"></i>Add to Cart</p></a
+            >
+          </div>
+          <h3>Vintage shirt dress</h3>
+          <h4>#6000</h4>
+        </div>
+      </div>
+
+      <!-- trousers -->
+
+      <div class="product-container" id="trousers">
+        <!-- Trouser product 1 -->
+        <div class="product-content">
+          <div class="img-container">
+            <img src="Beltless trouser.png" alt="" />
+            <a href="" class="cart-btn"
+              ><p><i class="bx bxs-cart"></i>Add to Cart</p></a
+            >
+          </div>
+          <h3>Beltless Pant Trouser</h3>
+          <h4>#5000</h4>
+        </div>
+        <!--Trouser product 2 -->
+        <div class="product-content">
+          <div class="img-container">
+            <img src="Beltless trouser 2.png" alt="" />
+            <a href="" class="cart-btn"
+              ><p><i class="bx bxs-cart"></i>Add to Cart</p></a
+            >
+          </div>
+          <h3>Beltless Pant Trouser</h3>
+          <h4>#5000</h4>
+        </div>
+        <!-- Trouser product 3 -->
+        <div class="product-content">
+          <div class="img-container">
+            <img src="Jean trouser.png" alt="" />
+            <a href="" class="cart-btn"
+              ><p><i class="bx bxs-cart"></i>Add to Cart</p></a
+            >
+          </div>
+          <h3>Jean Trouser</h3>
+          <h4>#5000</h4>
+        </div>
+        <!--Trouser product 4 -->
+        <div class="product-content">
+          <div class="img-container">
+            <img src="Jean trouser 2.png" alt="" />
+            <a href="" class="cart-btn"
+              ><p><i class="bx bxs-cart"></i>Add to Cart</p></a
+            >
+          </div>
+          <h3>Jean Trouser</h3>
+          <h4>#5000</h4>
+        </div>
+      </div>
+
+      <!-- Native wears -->
+
+      <div class="product-container" id="native">
+        <!-- Native product 1 -->
+        <div class="product-content">
+          <div class="img-container">
+            <img src="Native gown.jpg" alt="" />
+            <a href="" class="cart-btn"
+              ><p><i class="bx bxs-cart"></i>Add to Cart</p></a
+            >
+          </div>
+          <h3>Native</h3>
+          <h4>#7500</h4>
+        </div>
+        <!--Native product 2 -->
+        <div class="product-content">
+          <div class="img-container">
+            <img src="Native 8.jpg" alt="" />
+            <a href="" class="cart-btn"
+              ><p><i class="bx bxs-cart"></i>Add to Cart</p></a
+            >
+          </div>
+          <h3>Native</h3>
+          <h4>#7500</h4>
+        </div>
+        <!-- Native product 3 -->
+        <div class="product-content">
+          <div class="img-container">
+            <img src="Native 7.jpg" alt="" />
+            <a href="" class="cart-btn"
+              ><p><i class="bx bxs-cart"></i>Add to Cart</p></a
+            >
+          </div>
+          <h3>Native</h3>
+          <h4>#7500</h4>
+        </div>
+        <!--Native product 4 -->
+        <div class="product-content">
+          <div class="img-container">
+            <img src="Native 6.jpg" alt="" />
+            <a href="" class="cart-btn"
+              ><p><i class="bx bxs-cart"></i>Add to Cart</p></a
+            >
+          </div>
+          <h3>Native</h3>
+          <h4>#7500</h4>
+        </div>
+      </div>
+
+      {# Female wears #}
+
+      <div class="product-container" id="femalewears">
+	{# female product 1 #}
+        <div class="product-content">
+          <div class="img-container">
+            <img src="Ladies gown.jpg" alt="" />
+            <a href="" class="cart-btn"
+              ><p><i class="bx bxs-cart"></i>Add to Cart</p></a
+            >
+          </div>
+          <h3>Ladies Gown</h3>
+          <h4>#8500</h4>
+        </div>
+        <!--female product 2 -->
+        <div class="product-content">
+          <div class="img-container">
+            <img src="Ladies gown 2.jpg" alt="" />
+            <a href="" class="cart-btn"
+              ><p><i class="bx bxs-cart"></i>Add to Cart</p></a
+            >
+          </div>
+          <h3>Ladies Gown</h3>
+          <h4>#8500</h4>
+        </div>
+        <!-- female product 3 -->
+        <div class="product-content">
+          <div class="img-container">
+            <img src="Ladies gown 3.jpg" alt="" />
+            <a href="" class="cart-btn"
+              ><p><i class="bx bxs-cart"></i>Add to Cart</p></a
+            >
+          </div>
+          <h3>Ladies Gown</h3>
+          <h4>#8500</h4>
+        </div>
+        <!-- female product 4 -->
+        <div class="product-content">
+          <div class="img-container">
+            <img src="vin.jpg" alt="" />
+            <a href="" class="cart-btn"
+              ><p><i class="bx bxs-cart"></i>Add to Cart</p></a
+            >
+          </div>
+          <h3>Ladies Gown</h3>
+          <h4>#8500</h4>
+        </div>
+      </div>
+    </section>
+    {# PRODUCT SECTION END #}
+
+    {# CART SECTION LAYER START #}
+    <div class="cart-overlay">
+      <div class="cart">
+        <i class="bx bx-x"></i>
+        <h2>Your Cart</h2>
+        <div class="cart-content">
+          <img src="Men shirt 1.png" alt="" />
+          <div class="cart-details">
+            <h3>Coperate Shirt</h3>
+            <h4>#7500</h4>
+            <span class="cart-remove">remove</span>
+          </div>
+          <div class="cart-count">
+            <i class="bx bx-chevron-up"></i>
+            <p class="counting">0</p>
+            <i class="bx bx-chevron-down"></i>
+          </div>
+        </div>
+        <h4 class="total-btn">Your Total: #0</h4>
+        <div class="cart-btn">
+          <button class="remove-button">Remove Items</button>
+          <button class="checkout-btn">Go to Check-out</button>
+        </div>
+      </div>
+    </div>
+    {# CART SECTION LAYER END #}

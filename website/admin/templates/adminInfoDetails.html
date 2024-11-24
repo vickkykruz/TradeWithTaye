@@ -1,0 +1,883 @@
+{% extends "layouts/adminBase.html" %} {% block title %} Trade With TayeOJ || Adminstration Home
+{% endblock %} {% block content %}
+<div class="main-panel">
+    <div class="content-wrapper">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        {% for category, message in messages %}
+        {% if category == 'error' %}
+        <div class="alert alert-danger alter-dismissable fade show" role="alert" />
+        {{ message }}
+        <button type="button" class="close" data-dismiss="alert" />
+        <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    {% else %}
+    <div class="alert alert-success alter-dismissable fade show" role="alert" />
+    {{ message }}
+    <button type="button" class="close" data-dismiss="alert" />
+    <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{% endif %}
+{% endfor %}
+{% endif %}
+{% endwith %}
+
+{% if table == "Clients" %}
+<div class="page-header">
+    <h3 class="page-title"> Client Info </h3>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/admin/page/home"><i class="mdi mdi-home"></i></a></li>
+            <li class="breadcrumb-item"><a href="/admin/page/clients">Clients</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Client Info</li>
+        </ol>
+    </nav>
+</div>
+<div class="row">
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                {% if client_data %}
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-12">
+                        <h4 class="card-title">Client's Profile Photo</h4>
+                        <div class="img-container">
+                          <img src="{{ url_for('static', filename='images/user-pic-logo.png') }}" class="img-fluid" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-8 col-md-8 col-sm-12">
+                        <h4 class="card-title">Client's Information</h4>
+
+                        <div class="user-information-container">
+                            <div class="form-group row">
+                                <label for="clientName" class="col-sm-3 col-form-label">Name</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="clientName"
+                                        value="{{client_data.name}}" disabled>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="clientEmail" class="col-sm-3 col-form-label">Email Address</label>
+                                <div class="col-sm-9">
+                                    <input type="email" class="form-control" id="clientEmail"
+                                        value="{{ client_data.email }}" disabled>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="clientPhoneNumber" class="col-sm-3 col-form-label">Phone Number</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="clientPhoneNumber"
+                                        value="{{ client_data.phone_number }}" disabled>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="clientRegisterDate" class="col-sm-3 col-form-label">Registered Date</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="clientRegisterDate"
+                                        value="{{ client_data.create_date }}" disabled>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <h4 class="card-title">Client's Location</h4>
+                        <div class="user-information-container">
+                            <div class="form-group row">
+                                <label for="clientNationality" class="col-sm-3 col-form-label">Nationality</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="clientNationality" value="Nigeria"
+                                        disabled>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="clientState" class="col-sm-3 col-form-label">State</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="clientState" value="Imo State" disabled>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="clientAddress1" class="col-sm-3 col-form-label">Address 1</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="clientAddress1"
+                                        value="Phase 7, okoito street, Gberigbe Rd, Ikorodu. Lagos State" disabled>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="clientAddress2" class="col-sm-3 col-form-label">Address 2</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="clientAddress2"
+                                        value="Phase 1, okoito street, Gberigbe Rd, Ikorodu. Lagos State" disabled>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <h4 class="card-title">Client's Transaction History</h4>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>S/N</th>
+                                        <th>Order No</th>
+                                        <th>Amount</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>53275531</td>
+                                        <td>&#8358; 13,203.67</td>
+                                        <td>
+                                            <div class="dropdown">
+                                                <button class="btn btn-danger dropdown-toggle" type="button"
+                                                    id="dropdownMenuButton3" data-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false"> Action </button>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
+                                                    <h6 class="dropdown-header">Settings</h6>
+                                                    <a class="dropdown-item" href="#">Action</a>
+                                                    <a class="dropdown-item" href="#">Another action</a>
+                                                    <a class="dropdown-item" href="#">Something else here</a>
+                                                    <div class="dropdown-divider"></div>
+                                                    <a class="dropdown-item" href="#">Separated link</a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>53275531</td>
+                                        <td>&#8358; 10,503.67</td>
+                                        <td>
+                                            <div class="dropdown">
+                                                <button class="btn btn-danger dropdown-toggle" type="button"
+                                                    id="dropdownMenuButton3" data-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false"> Action </button>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
+                                                    <h6 class="dropdown-header">Settings</h6>
+                                                    <a class="dropdown-item" href="#">Action</a>
+                                                    <a class="dropdown-item" href="#">Another action</a>
+                                                    <a class="dropdown-item" href="#">Something else here</a>
+                                                    <div class="dropdown-divider"></div>
+                                                    <a class="dropdown-item" href="#">Separated link</a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>53275531</td>
+                                        <td>&#8358; 20,130.00</td>
+                                        <td>
+                                            <div class="dropdown">
+                                                <button class="btn btn-danger dropdown-toggle" type="button"
+                                                    id="dropdownMenuButton3" data-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false"> Action </button>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
+                                                    <h6 class="dropdown-header">Settings</h6>
+                                                    <a class="dropdown-item" href="#">Action</a>
+                                                    <a class="dropdown-item" href="#">Another action</a>
+                                                    <a class="dropdown-item" href="#">Something else here</a>
+                                                    <div class="dropdown-divider"></div>
+                                                    <a class="dropdown-item" href="#">Separated link</a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="template-demo mt-3">
+                    <button type="button" class="btn btn-warning btn-fw" data-toggle="modal"
+                        data-target="#staticBackdropEdit{{ client_data.id }}">Edit Record</button>
+                    <button type="button" class="btn btn-danger btn-fw" data-toggle="modal"
+                        data-target="#staticBackdropDelete{{ client_data.id }}">Delete Record</button>
+                </div>
+
+                <!-- Delete Modal -->
+                <div class="modal fade" id="staticBackdropDelete{{ client_data.id }}" data-backdrop="static" data-keyboard="false"
+                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title fs-5" id="staticBackdropLabel">Are you sure, you want to delete
+                                    is record?</h4>
+                                <button class="btn btn-close" data-dismiss="modal" aria-label="close">&times;</button>
+                            </div>
+                            <div class="modal-footer">
+                                <form action="#" method="POST">
+                                    <input type="hidden" name="client_bind_id" value="{{ client_data.bind_id }}" />
+				    <input type="hidden" name="purpose" value="Delete" />
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Edit Modal -->
+                <div class="modal fade" id="staticBackdropEdit{{ client_data.id }}" data-backdrop="static" data-keyboard="false"
+                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title fs-5" id="staticBackdropLabel">Edit Record</h4>
+                                <button class="btn btn-close" data-dismiss="modal" aria-label="close">&times;</button>
+                            </div>
+			    <form action="#" method="POST" />
+                              <div class="modal-body">
+                                <div class="user-information-container">
+				  <input type="hidden" name="client_bind_id" value="{{ client_data.bind_id }}" />                                            <input type="hidden" name="purpose" value="Edit" />
+                                  <div class="form-group row">
+                                    <label for="clientName" class="col-sm-3 col-form-label">Name</label>
+                                    <div class="col-sm-9">
+                                      <input type="text" class="form-control" name="clientName" id="clientName"
+					value="{{ client_data.name }}">
+                                    </div>
+                                  </div>
+
+                                  <div class="form-group row">
+                                    <label for="clientEmail" class="col-sm-3 col-form-label">Email Address</label>
+                                    <div class="col-sm-9">
+                                      <input type="email" class="form-control" name="clientEmail" id="clientEmail"
+					value="{{ client_data.email }}">
+                                    </div>
+                                  </div>
+
+                                  <div class="form-group row">
+                                    <label for="clientPhoneNumber" class="col-sm-3 col-form-label">Phone
+                                        Number</label>
+                                    <div class="col-sm-9">
+                                      <input type="text" class="form-control" name="clientPhoneNumber" id="clientPhoneNumber"
+					value="{{ client_data.phone_number }}">
+                                    </div>
+                                 </div>
+                              </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-success">Save</button>
+                            </div>
+			    </form>
+                        </div>
+                    </div>
+                </div>
+                {% else %}
+                <h4 class=" card-title text-center text-danger">Record not found ): No record for this user </h4>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+</div>
+{% elif table == "Product"%}
+<div class="page-header">
+    <h3 class="page-title"> Product Info </h3>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/admin/page/home"><i class="mdi mdi-home"></i></a></li>
+            <li class="breadcrumb-item"><a href="/admin/page/clients">Product</a></li>
+            <li class="breadcrumb-item"><a href="/admin/page/clients">Product Lists</a></li>
+	    <li class="breadcrumb-item active" aria-current="page">{{ product_data.product_title }}</li>
+        </ol>
+    </nav>
+</div>
+<div class="row">
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                {% if product_data %}
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <div class="item-pre-info"
+                            style="width: 100%; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+                            <div class="item-order-title">
+                              <h6 class="card-title">Item Number: {{ product_data.item_id }}</h6>
+			       <h6 class="cart-title">Product Category: {{ product_data.product_category }}</h6>
+                            </div>
+
+                            <div class="item-date">
+				    <h6 class="cart-title">Added on: {{ product_data.create_date }}</h6>
+				<h6 class="cart-title">Updated on: {{ product_data.update_date }}</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-12">
+                        <div class="item-img-container"
+                            style="display: flex; justify-content: center; align-items: center;">
+			<img src="{{ url_for('static', filename='uploads/' + product_data.product_image) }}" style="width: 250px; height: 250px;" class="img-fluid"
+                                alt="item image">
+                        </div>
+                    </div>
+                    <div class="col-lg-8 col-md-8 col-sm-12">
+                        <div class="item-header-info">
+                          <h4 class="card-title">{{ product_data.product_title }}</h4>
+                        </div>
+                        <hr style="background: #ccc; margin-top: -5px;">
+
+                        <p class="card-description">{{ product_data.product_des }}</p>
+			<div class='' style="display: flex; justify-content: space-between; align-items: center; flex-wra: wrap;">
+                          <h6 class="card-title">Price: &#8358; {{ product_data.product_price }}</h6>
+			  {% if product_data.market_status == "Available" %}
+			  <h6 class="card-title text-success">Market Status {{ product_data.market_status }}</h6>
+			  {% elif product_data.market_status == "Sold" %}
+			  <h6 class="card-title text-warning">Market Status {{ product_data.market_status }}</h6>
+			  {% else %}
+			  <h6 class="card-title text-danger">Market Status {{ product_data.market_status }}</h6>
+			  {% endif %}
+                        </div>
+                        <hr style="background: #ccc; margin-top: -5px;">
+                        <div class="item-feedback">
+                            <h5 class="card-title">Feedback</h5>
+			    {% if feedback_data %}
+                            <span style="float: right;"><a href="javascript:void(0)">View All</a></span>
+                            <div class="feedback-container mt-2"
+                                style="display: inline-flex; align-items: baseline; border-bottom: 2px solid #ccc;">
+                                <div class="client-img">
+                                    <img src="../../assets/images/faces/face2.jpg" class="img-xs rounded-circle" alt="">
+                                </div>
+                                <div class="client-comment" style="margin-left: 10px;">
+                                    <div class="rating" style="float: inline-end;">
+                                        <i class="mdi mdi-star"></i>
+                                        <i class="mdi mdi-star"></i>
+                                        <i class="mdi mdi-star"></i>
+                                        <i class="mdi mdi-star"></i>
+                                        <i class="mdi mdi-star"></i>
+                                    </div>
+                                    <div class="client-message">
+                                        <p class="card-description">Lorem ipsum dolor sit amet consectetur, adipisicing
+                                            elit. Aspernatur quaerat, nisi sit amet consectetur adipisicing elit. Quae
+                                            eaque saepe delectus... <span><b><a href="javascript:void(0)">Read
+                                                        More</a></b></span></p>
+                                    </div>
+                                </div>
+                            </div>
+			    {% endif %}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="template-demo mt-3">
+                    <button type="button" class="btn btn-warning btn-fw" data-toggle="modal"
+			data-target="#staticBackdropEdit{{ product_data.item_id }}">Edit Product</button>
+                    <button type="button" class="btn btn-danger btn-fw" data-toggle="modal"
+                        data-target="#staticBackdropDelete{{ product_data.item_id }}">Delete Product</button>
+                </div>
+
+                <!-- Delete Modal -->
+                <div class="modal fade" id="staticBackdropDelete{{ product_data.item_id }}" data-backdrop="static" data-keyboard="false"
+                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title fs-5" id="staticBackdropLabel">Are you sure, you want to delete
+                                    is product?</h4>
+                                <button class="btn btn-close" data-dismiss="modal" aria-label="close">&times;</button>
+                            </div>
+                            <div class="modal-footer">
+                                <form action="#" method="POST">
+                                  <input type="hidden" name="product_item_id" value="{{ product_data.item_id }}" />
+				  <input type="hidden" name="purpose" value="Delete" />
+                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                  <button type="submit" class="btn btn-danger">Delete</button>
+				</form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Edit Modal -->
+                <div class="modal fade" id="staticBackdropEdit{{ product_data.item_id }}" data-backdrop="static" data-keyboard="false"
+                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title fs-5" id="staticBackdropLabel">Edit Product</h4>
+                                <button class="btn btn-close" data-dismiss="modal" aria-label="close">&times;</button>
+                            </div>
+			    <form action="#" enctype="multipart/form-data" method="POST" >
+                              <div class="modal-body">
+                                <div class="user-information-container">
+                                    <input type="hidden" name="product_item_id" value="{{ product_data.item_id }}" />
+				    <input type="hidden" name="purpose" value="Edit" />
+                                    <div class="form-group row">
+                                        <label for="productImage" class="col-sm-3 col-form-label">Product Image</label>
+                                        <div class="col-sm-9">
+                                            <img src="{{ url_for('static', filename='uploads/' + product_data.product_image) }}" style="width: 100px; height: 100px; object-fit: cover;" alt="product Image" />
+                                            <input type="file" name="product_img" class="form-control" id="productImage">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="productCategory" class="col-sm-3 col-form-label">Product Category</label>
+                                        <div class="col-sm-9">
+                                            <select name="productCategry" class="form-control" id="productCategry">
+                                              <option value="{{ product_data.product_category }}">{{ product_data.product_category }}</option>
+                                              <option value="shirt">Shirts</option>
+                                              <option value="vintage_shirt">Vintage Shirts</option>
+                                              <option value="trouser">Trousers</option>
+                                              <option value="native_wears">Native Wears</option>
+                                              <option value="female_wear">Female Wears</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label for="productTitle" class="col-sm-3 col-form-label">Product Title</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" name="productTitle" class="form-control" id="productTitle"
+                                                value="{{ product_data.product_title }}">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label for="productDesc" class="col-sm-3 col-form-label">Product Description</label>
+                                        <div class="col-sm-9">
+                                            <textarea class="form-control" name="productDesc" id="productDesc" rows="3">{{ product_data.product_des }}</textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label for="productPrice" class="col-sm-3 col-form-label">Product
+                                            Price</label>
+                                        <div class="col-sm-9">
+                                            <input type="number" name="productPrice" class="form-control" id="productPrice"
+                                                value="{{ product_data.product_price }}">
+                                        </div>
+                                    </div>
+
+				    {% if product_data.market_status %}
+				    <div class="form-group row">
+                                        <label for="marketStatus" class="col-sm-3 col-form-label">Market Status</label>
+                                        <div class="col-sm-9">
+                                            <select name="marketStatus" class="form-control" id="marketStatus">
+                                              <option value="{{ product_data.market_status }}">{{ product_data.market_status }}</option>
+					      <option value="Available">Available</option>
+					      <option value="Unavailable">Unavailable</option>
+                                            </select>
+                                        </div>
+                                    </div>
+				    {% endif %}
+
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-success">Save</button>
+                            </div>
+			  </form>
+                        </div>
+                    </div>
+                </div>
+                {% else %}
+                <h4 class=" card-title text-center text-danger">Record not found ): No record for this product </h4>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+</div>
+{% elif table == "Inbox"%}
+<div class="page-header">
+    <h3 class="page-title"> Inbox Info </h3>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/admin/page/home"><i class="mdi mdi-home"></i></a></li>
+            <li class="breadcrumb-item"><a href="/admin/page/clients">Inbox</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Inbox Details</li>
+        </ol>
+    </nav>
+</div>
+<div class="row">
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                {% if inbox_data %}
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <div class="inbox-header"
+                            style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+                            <h4 class="card-title">Sender Name: Edward Victor Chukwuemeka</h4>
+                            <div class="inbox-date">
+                                <h5>Date: 3rd of March, 2024</h5>
+                            </div>
+                        </div>
+                        <hr style="background: #ccc;">
+                        <div class="inbox-body">
+                            <h4 class="card-title">Message:</h4>
+                            <p class="card-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus
+                                nemo quos distinctio repellat, corporis aspernatur aut delectus alias. Excepturi modi
+                                neque maxime placeat eum inventore, in ullam blanditiis porro ipsum?</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="template-demo mt-3">
+                    <button type="button" class="btn btn-danger btn-fw" data-toggle="modal"
+                        data-target="#staticBackdropDelete">Delete Record</button>
+                </div>
+
+                <!-- Delete Modal -->
+                <div class="modal fade" id="staticBackdropDelete" data-backdrop="static" data-keyboard="false"
+                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title fs-5" id="staticBackdropLabel">Are you sure, you want to delete
+                                    is record?</h4>
+                                <button class="btn btn-close" data-dismiss="modal" aria-label="close">&times;</button>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-danger">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% else %}
+                <h4 class=" card-title text-center text-danger">Record not found ): No record for this inbox </h4>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+</div>
+{% elif table == "Feedback"%}
+{% elif table == "Order"%}
+<div class="page-header">
+    <h3 class="page-title"> Order Details </h3>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/admin/page/home"><i class="mdi mdi-home"></i></a></li>
+            <li class="breadcrumb-item"><a href="/admin/page/records/orders">Order Records</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Order Details</li>
+        </ol>
+    </nav>
+</div>
+<div class="row">
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+              {% if client_details and ordered_items and total_amt and order_no and order_status and order_date %}
+	        <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="item-pre-info"
+                        style="width: 100%; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+                      <div class="item-order-title">
+
+                        <h6 class="cart-title">Order status: 
+                          {% if order_status == "not paid" %}
+			    <div class="badge badge-outline-warning">Pending</div>
+			  {% elif order_status == "success" %}
+			    <div class="badge badge-outline-success">Approved</div>
+			  {% else %}
+			    <div class="badge badge-outline-danger">Rejected</div>
+			  {% endif %}
+			</h6>
+		      </div>
+		      <div class="item-date">
+                        <h6 class="cart-title">Placed order on: {{ order_date }}</h6>
+		      </div>
+		    </div>
+                  </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-lg-4 col-md-4 col-sm-12">
+                      <h4 class="card-title">Client's Info</h4>
+		      <div class="img-containe" style="display: flex; justify-content: center; align-items: center;">
+                        <img src="{{ url_for('static', filename='images/user-pic-logo.png') }}" class="img-fluid" alt="">
+		      </div>
+
+		      <div class="user-information-container mt-3">
+                        <div class="form-group row">
+                          <label for="clientName" class="col-sm-3 col-form-label">Name</label>
+			  <div class="col-sm-9">
+                            <input type="text" class="form-control" id="clientName"
+			      value="{{client_details.name}}" disabled>
+			  </div>
+			</div>
+
+			<div class="form-group row">
+                          <label for="clientEmail" class="col-sm-3 col-form-label">Email Address</label>
+			  <div class="col-sm-9">
+                            <input type="email" class="form-control" id="clientEmail"
+                                        value="{{ client_details.email }}" disabled>
+			  </div>
+			</div>
+
+                        <div class="form-group row">
+                          <label for="clientPhoneNumber" class="col-sm-3 col-form-label">Phone Number</label>
+                          <div class="col-sm-9">
+                            <input type="text" class="form-control" id="clientPhoneNumber"
+                                  value="{{ client_details.phone_number }}" disabled>
+                          </div>
+                       </div>
+		     </div>
+
+                    </div>
+                    <div class="col-lg-8 col-md-8 col-sm-12">
+                      <h4 class="card-title">Ordered Items and Amount</h4>
+                      <div class="table-responsive mt-3">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>S/N</th>
+                                        <th>Img</th>
+					<th>Title</th>
+                                        <th>Price * Quantiy</th>
+                                        <th>Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                   {% for order in ordered_items %}
+                                    <tr>
+                                        <td>{{ loop.index }}</td>
+                                        <td><img src="{{ url_for('static', filename='uploads/' + order.product_image) }}" style="width: 40px; height:40px; object-fit: cover;" alt="product Img" /></td>
+					<td>{{ order.product_title }}</td>
+					<td>&#8358; {{ order.product_amount }} * {{ order.product_quanity }}</td>
+                                        <td>&#8358; {{ order.product_amount * order.product_quanity }}</td>
+                                    </tr>
+				    {% endfor %}
+				    <tr>
+                                      <td colspan="4"><h4 class="card-title">Total</h4></td>
+				      <td><h4 class="card-title">&#8358; {{ total_amt }}</h4></td>
+                                    </tr>
+				</tbody>
+			    </table>
+		        </div>
+                    </div>
+                </div>
+
+                <div class="template-demo mt-3">
+                    <button type="button" class="btn btn-danger btn-fw" data-toggle="modal"
+                        data-target="#staticBackdropDelete">Delete Order</button>
+		    <button type="button" class="btn btn-warning btn-fw" data-toggle="modal"
+                        data-target="#staticBackdropEdit">Edit Order</button>
+                </div>
+
+		<!-- Edit Modal -->
+                <div class="modal fade" id="staticBackdropEdit" data-backdrop="static" data-keyboard="false"
+                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title fs-5" id="staticBackdropLabel">Edit Order Status</h4>
+                                <button class="btn btn-close" data-dismiss="modal" aria-label="close">&times;</button>
+                            </div>
+			    <form action="#" method="POST">
+                              <input type="hidden" name="order_no" value="{{ order_no }}"/>
+			      <input type="hidden" name="purpose" value="Edit"/>
+			      <input type="hidden" name="user_bindId" value="{{ client_details.bind_id }}"/>
+			      <div class="modal-body">
+                                <div class="form-group row">
+                                  <label for="productCategory" class="col-sm-3 col-form-label">Update Order Status</label>
+				  <div class="col-sm-9">
+                                    <select name="update_status" class="form-control" id="productCategry">
+                                      <option value="">None</option>
+				      <option value="success">Paid</option>
+				      <option value="not_paid">Not Paid</option>
+				      <option value="error">Failed</option>
+				    </select>
+				  </div>
+			        </div>
+			      </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-success">Save</button>
+                            </div>
+			  </form>
+                        </div>
+                    </div>
+                </div>
+
+		<!-- Delete Modal -->
+                <div class="modal fade" id="staticBackdropDelete" data-backdrop="static" data-keyboard="false"
+                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title fs-5" id="staticBackdropLabel">Are you sure, you want to delete
+                                    this order?</h4>
+                                <button class="btn btn-close" data-dismiss="modal" aria-label="close">&times;</button>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-danger">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% else %}
+                  <h4 class=" card-title text-center text-danger">Record not found ): No record for this order </h4>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+</div>
+{% elif table == "Transcation"%}
+<div class="page-header">
+  <h3 class="page-title"> Transcation Details </h3>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/admin/page/home"><i class="mdi mdi-home"></i></a></li>
+      <li class="breadcrumb-item"><a href="/admin/page/records/transcation">Transcation History</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Transcation Details</li>
+    </ol>
+  </nav>
+</div>
+<div class="row">
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+              {% if client_details and ordered_items %}
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="item-pre-info"
+                        style="width: 100%; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+                      <div class="item-order-title">
+
+                        <h6 class="cart-title">Order status:
+                          {% if order_status == "not paid" %}
+                            <div class="badge badge-outline-warning">Pending</div>
+                          {% elif order_status == "success" %}
+                            <div class="badge badge-outline-success">Approved</div>
+                          {% else %}
+                            <div class="badge badge-outline-danger">Rejected</div>
+                          {% endif %}
+                        </h6>
+                      </div>
+                      <div class="item-date">                                                                                                                               <h6 class="cart-title">Placed order on: {{ order_date }}</h6>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+		<div class="row mt-4">
+                  <div class="col-lg-4 col-md-4 col-sm-12">
+                    <h4 class="card-title">Client's Info</h4>
+		    <div class="img-containe" style="display: flex; justify-content: center; align-items: center;">
+                      <img src="{{ url_for('static', filename='images/user-pic-logo.png') }}" class="img-fluid" alt="">
+		    </div>
+
+		    <div class="user-information-container mt-3">
+                      <div class="form-group row">
+                        <label for="clientName" class="col-sm-3 col-form-label">Name</label>
+			<div class="col-sm-9">
+                          <input type="text" class="form-control" id="clientName"
+			    value="{{client_details.name}}" disabled>
+			</div>
+		      </div>
+
+		      <div class="form-group row">
+                        <label for="clientEmail" class="col-sm-3 col-form-label">Email Address</label>
+			<div class="col-sm-9">
+                          <input type="email" class="form-control" id="clientEmail"
+			    value="{{ client_details.email }}" disabled>
+			</div>
+		      </div>
+
+		      <div class="form-group row">
+                        <label for="clientPhoneNumber" class="col-sm-3 col-form-label">Phone Number</label>
+			<div class="col-sm-9">
+                          <input type="text" class="form-control" id="clientPhoneNumber"
+			    value="{{ client_details.phone_number }}" disabled>
+			</div>
+		      </div>
+		    </div>
+		  </div>
+		  <div class="col-lg-8 col-md-8 col-sm-12">
+                    <h4 class="card-title">Ordered Items and Amount</h4>
+		    <div class="table-responsive mt-3">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th>S/N</th>
+			    <th>Img</th>
+			    <th>Title</th>
+			    <th>Price * Quantiy</th>
+			    <th>Total</th>
+			  </tr>
+			</thead>
+			<tbody>
+                          {% for order in ordered_items %}
+			  <tr>
+                            <td>{{ loop.index }}</td>
+			    <td><img src="{{ url_for('static', filename='uploads/' + order.product_image) }}" style="width: 40px; height:40px; object-fit: cover;" alt="product Img" /></td>
+			    <td>{{ order.product_title }}</td>
+			    <td>&#8358; {{ order.product_amount }} * {{ order.product_quanity }}</td>
+			    <td>&#8358; {{ order.product_amount * order.product_quanity }}</td>
+			  </tr>
+			  {% endfor %}
+			  <tr>
+                            <td colspan="4"><h4 class="card-title">Total</h4></td>
+			    <td><h4 class="card-title">&#8358; {{ total_amt }}</h4></td>
+			  </tr>
+			</tbody>
+		      </table>
+		    </div>
+		  </div>
+                </div>
+
+		<div class="template-demo mt-3">
+                    <button type="button" class="btn btn-danger btn-fw" data-toggle="modal"
+                        data-target="#staticBackdropDelete">Delete Record</button>
+                </div>
+
+		<!-- Delete Modal -->
+                <div class="modal fade" id="staticBackdropDelete" data-backdrop="static" data-keyboard="false"
+                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title fs-5" id="staticBackdropLabel">Are you sure, you want to delete
+                                    this record?</h4>
+                                <button class="btn btn-close" data-dismiss="modal" aria-label="close">&times;</button>
+                            </div>
+                            <div class="modal-footer">
+                                <form action="#" method="POST">
+                                  <input type="hidden" name="order_no" value="{{ order_no }}"/>
+				  <input type="hidden" name="purpose" value="Delete"/>
+				  <input type="hidden" name="user_bindId" value="{{ client_details.bind_id }}"/>
+                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                  <button type="submit" class="btn btn-danger">Delete</button>
+				</form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% else %}
+                  <h4 class=" card-title text-center text-danger">Record not found ): No record for this order </h4>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% else %}
+{% endif %}
+</div>
+<!-- content-wrapper ends -->
+<!-- partial:../../partials/_footer.html -->
+<footer class="footer">
+    <div class="d-sm-flex justify-content-center justify-content-sm-between">
+        <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © joamcollection.com
+            2024</span>
+        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Designed and Implementated by <a
+                href="https://github.com/vickkykruz" target="_blank" rel="noopener noreferrer">vickkykruz</a></span>
+    </div>
+</footer>
+<!-- partial -->
+</div>
+{% endblock %}

@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{% block title %} Joam Collections {% endblock %}</title>
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static/styles', filename='style.css') }}"
+    />
+    <link rel="icon" href="favicon.ico.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <i class="bx bx-menu-alt-left menu-icon" id="menu-icon"></i>
+      <img src="logo.png" alt="" />
+
+      <ul class="navbar">
+        <div class="logo-name">
+          <a href="" id="nav-element"><h2>Joam collections</h2></a>
+          <i class="bx bx-x" id="close-icon"></i>
+        </div>
+        <li><a href="#home" id="nav-element">Home</a></li>
+        <li><a href="#products" id="nav-element">Products</a></li>
+        <li class="dropdown">
+          <a href="javascript:void(0)" class="dropbtn">Categories</a>
+          <div class="dropdown-content">
+            <a href="#shirts" id="nav-element">Shirts</a>
+            <a href="#vintage" id="nav-element">Vintage</a>
+            <a href="#trousers" id="nav-element">Trousers</a>
+            <a href="#native" id="nav-element">Native Wears</a>
+            <a href="#femalewears" id="nav-element">Female Wears</a>
+          </div>
+        </li>
+        <li><a href="#newarrivals" id="nav-element">New Arrivals</a></li>
+
+        <li class="move"><a href="#about" id="nav-element">About</a></li>
+        <li><a href="#contact" id="nav-element">Contact</a></li>
+      </ul>
+      <div class="navbar-icon">
+        <i class="bx bx-search-alt-2"></i>
+        <a href="tracker.html"><i class="bx bx-user-circle"></i></a>
+        <div class="cart-item">
+          <i class="bx bx-cart-alt"></i>
+          <span class="count">0</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="overlay"></div>
+
+    {% comment %} HERO SECTION START {% endcomment %}
+    <div class="swiper-container mySwiper" id="home">
+      <div class="swiper-wrapper">
+        <!-- First slide -->
+
+        <div class="swiper-slide">
+          <img src="slide image2.jpg" alt="" />
+          <div class="slide-content">
+            <h1>Organic Cotton</h1>
+            <p>Breathe easy, feel comfy</p>
+            <a href="">SHOP NOW</a>
+          </div>
+        </div>
+        <!-- second slide -->
+        <div class="swiper-slide">
+          <img src="slider image3.jpg" alt="" />
+          <div class="slide-content">
+            <h1>Tailored Perfection</h1>
+            <p>Fitted to flatter</p>
+            <a href="">SHOP NOW</a>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <img src="slider image.jpg" alt="" />
+          <div class="slide-content">
+            <h1>Sharpen Your Look</h1>
+            <p>Crisp lines, cool vibes</p>
+            <a href="">SHOP NOW</a>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+    {% comment %} HERO SECTION END {% endcomment %}
+
+    {% comment %} PRODUCT SECTION START {% endcomment %}
+    <section class="products" id="products">
+      <div class="heading">
+        <h2>Our Products</h2>
+      </div>
+
+      <!-- Shirts -->
+
+      <div class="product-container" id="shirts">
+        <!-- shirt product 1 -->
+        <div class="product-content">
+          <div class="img-container">
+            <img src="Men shirt 1.png" alt="" />
+            <a href="" class="cart-btn"
+              ><p><i class="bx bxs-cart"></i>Add to Cart</p></a
+            >
+          </div>
+          <h3>Cooperate Shirts for men</h3>
+          <h4>#7000</h4>
+        </div>
+        <!--shirt product 2 -->
+        <div class="product-content">
+          <div class="img-container">
+            <img src="Men shirt 2.png" alt="" />
+            <a href="" class="cart-btn"
+              ><p><i class="bx bxs-cart"></i>Add to Cart</p></a
+            >
+          </div>
+          <h3>Cooperate Shirts for men</h3>
+          <h4>#7000</h4>
+        </div>
+        <!-- shirt product 3 -->
+        <div class="product-content">
+          <div class="img-container">
+            <img src="Men shirt 3.png" alt="" />
+            <a href="" class="cart-btn"
+              ><p><i class="bx bxs-cart"></i>Add to Cart</p></a
+            >
+          </div>
+          <h3>Cooperate Shirts for men</h3>
+          <h4>#7000</h4>
+        </div>
+        <!--shirt product 4 -->
+        <div class="product-content">
+          <div class="img-container">
+            <img src="Men shirt 4.png" alt="" />
+            <a href="" class="cart-btn"
+              ><p><i class="bx bxs-cart"></i>Add to Cart</p></a
+            >
+          </div>
+          <h3>Cooperate Shirts for men</h3>
+          <h4>#7000</h4>
+        </div>
+        <!--shirt product 5 -->
+        <div class="product-content">
+          <div class="img-container">
+            <img src="Men shirt 5.png" alt="" />
+            <a href="" class="cart-btn"
+              ><p><i class="bx bxs-cart"></i>Add to Cart</p></a
+            >
+          </div>
+          <h3>Cooperate Shirts for men</h3>
+          <h4>#7000</h4>
+        </div>
+        <!--shirt product 6 -->
+        <div class="product-content">
+          <div class="img-container">
+            <img src="Men shirt 6.png" alt="" />
+            <a href="" class="cart-btn"
+              ><p><i class="bx bxs-cart"></i>Add to Cart</p></a
+            >
+          </div>
+          <h3>Cooperate Shirts for men</h3>
+          <h4>#7000</h4>
+        </div>
+        <!--shirt product 7 -->
+        <div class="product-content">
+          <div class="img-container">
+            <img src="Men shirt 7.png" alt="" />
+            <a href="" class="cart-btn"
+              ><p><i class="bx bxs-cart"></i>Add to Cart</p></a
+            >
+          </div>
+          <h3>Cooperate Shirts for men</h3>
+          <h4>#7000</h4>
+        </div>
+        <!--shirt product 8 -->
+        <div class="product-content">
+          <div class="img-container">
+            <img src="Men shirt 8.png" alt="" />
+            <a href="" class="cart-btn"
+              ><p><i class="bx bxs-cart"></i>Add to Cart</p></a
+            >
+          </div>
+          <h3>Cooperate Shirts for men</h3>
+          <h4>#7000</h4>
+        </div>
+
+        <!--shirt product 9 -->
+        <div class="product-content">
+          <div class="img-container">
+            <img src="F men shirt 10.png" alt="" />
+            <a href="" class="cart-btn"
+              ><p><i class="bx bxs-cart"></i>Add to Cart</p></a
+            >
+          </div>
+          <h3>Cooperate Shirts for men</h3>
+          <h4>#7000</h4>
+        </div>
+        <!--shirt product 10 -->
+        <div class="product-content">
+          <div class="img-container">
+            <img src="F men shirt 9.png" alt="" />
+            <a href="" class="cart-btn"
+              ><p><i class="bx bxs-cart"></i>Add to Cart</p></a
+            >
+          </div>
+          <h3>Cooperate Shirts for men</h3>
+          <h4>#7000</h4>
+        </div>
+        <!--shirt product 11 -->
+        <div class="product-content">
+          <div class="img-container">
+            <img src="F men shirt 8.png" alt="" />
+            <a href="" class="cart-btn"
+              ><p><i class="bx bxs-cart"></i>Add to Cart</p></a
+            >
+          </div>
+          <h3>Cooperate Shirts for men</h3>
+          <h4>#7000</h4>
+        </div>
+
+        <!--shirt product 12 -->
+        <div class="product-content">
+          <div class="img-container">
+            <img src="F men shirt 6.png" alt="" />
+            <a href="" class="cart-btn"
+              ><p><i class="bx bxs-cart"></i>Add to Cart</p></a
+            >
+          </div>
+          <h3>Cooperate Shirts for men</h3>
+          <h4>#7000</h4>
+        </div>
+
+        <!--shirt product 13 -->
+        <div class="product-content">
+          <div class="img-container">
+            <img src="Men shirt 9.png" alt="" />
+            <a href="" class="cart-btn"
+              ><p><i class="bx bxs-cart"></i>Add to Cart</p></a
+            >
+          </div>
+          <h3>Cooperate Shirts for men</h3>
+          <h4>#7000</h4>
+        </div>
+        <!--shirt product 14 -->
+        <div class="product-content">
+          <div class="img-container">
+            <img src="Men shirt 11.png" alt="" />
+            <a href="" class="cart-btn"
+              ><p><i class="bx bxs-cart"></i>Add to Cart</p></a
+            >
+          </div>
+          <h3>Cooperate Shirts for men</h3>
+          <h4>#7000</h4>
+        </div>
+        <!--shirt product 15 -->
+        <div class="product-content">
+          <div class="img-container">
+            <img src="F men shirt 8.png" alt="" />
+            <a href="" class="cart-btn"
+              ><p><i class="bx bxs-cart"></i>Add to Cart</p></a
+            >
+          </div>
+          <h3>Cooperate Shirts for men</h3>
+          <h4>#7000</h4>
+        </div>
+        <!--shirt product 16 -->
+        <div class="product-content">
+          <div class="img-container">
+            <img src="F men shirt 7.png" alt="" />
+            <a href="" class="cart-btn"
+              ><p><i class="bx bxs-cart"></i>Add to Cart</p></a
+            >
+          </div>
+          <h3>Cooperate Shirts for men</h3>
+          <h4>#7000</h4>
+        </div>
+        <!--shirt product 17 -->
+        <div class="product-content">
+          <div class="img-container">
+            <img src="F men shirt 6.png" alt="" />
+            <a href="" class="cart-btn"
+              ><p><i class="bx bxs-cart"></i>Add to Cart</p></a
+            >
+          </div>
+          <h3>Cooperate Shirts for men</h3>
+          <h4>#7000</h4>
+        </div>
+        <!--shirt product 18 -->
+        <div class="product-content">
+          <div class="img-container">
+            <img src="F men shirt 5.png" alt="" />
+            <a href="" class="cart-btn"
+              ><p><i class="bx bxs-cart"></i>Add to Cart</p></a
+            >
+          </div>
+          <h3>Cooperate Shirts for men</h3>
+          <h4>#7000</h4>
+        </div>
+      </div>
+
+      <!--Vintage Shirts -->
+
+      <div class="product-container" id="vintage">
+        <!-- Vintage product 1 -->
+        <div class="product-content">
+          <div class="img-container">
+            <img src="Vintage 1.png" alt="" />
+            <a href="" class="cart-btn"
+              ><p><i class="bx bxs-cart"></i>Add to Cart</p></a
+            >
+          </div>
+          <h3>Vintage Shirt</h3>
+          <h4>#6000</h4>
+        </div>
+        <!--Vintage product 2 -->
+        <div class="product-content">
+          <div class="img-container">
+            <img src="Vintage 2.png" alt="" />
+            <a href="" class="cart-btn"
+              ><p><i class="bx bxs-cart"></i>Add to Cart</p></a
+            >
+          </div>
+          <h3>Vintage Shirt</h3>
+          <h4>#6000</h4>
+        </div>
+        <!-- Vintage product 3 -->
+        <div class="product-content">
+          <div class="img-container">
+            <img src="Vintage 3.png" alt="" />
+            <a href="" class="cart-btn"
+              ><p><i class="bx bxs-cart"></i>Add to Cart</p></a
+            >
+          </div>
+          <h3>Vintage Shirt</h3>
+          <h4>#6000</h4>
+        </div>
+        <!--Vintage product 4 -->
+        <div class="product-content">
+          <div class="img-container">
+            <img src="Vintage 4.png" alt="" />
+            <a href="" class="cart-btn"
+              ><p><i class="bx bxs-cart"></i>Add to Cart</p></a
+            >
+          </div>
+          <h3>Vintage Shirt</h3>
+          <h4>#6000</h4>
+        </div>
+        <!--Vintage product 5 -->
+        <div class="product-content">
+          <div class="img-container">
+            <img src="Vintage 5.png" alt="" />
+            <a href="" class="cart-btn"
+              ><p><i class="bx bxs-cart"></i>Add to Cart</p></a
+            >
+          </div>
+          <h3>Vintage Shirt</h3>
+          <h4>#7000</h4>
+        </div>
+        <!--Vintage product 6 -->
+        <div class="product-content">
+          <div class="img-container">
+            <img src="Vintage 6.png" alt="" />
+            <a href="" class="cart-btn"
+              ><p><i class="bx bxs-cart"></i>Add to Cart</p></a
+            >
+          </div>
+          <h3>Vintage Shirt</h3>
+          <h4>#6000</h4>
+        </div>
+        <!--Vintage product 7 -->
+        <div class="product-content">
+          <div class="img-container">
+            <img src="Vintage dress.jpg" alt="" />
+            <a href="" class="cart-btn"
+              ><p><i class="bx bxs-cart"></i>Add to Cart</p></a
+            >
+          </div>
+          <h3>Vintage shirt dress</h3>
+          <h4>#6000</h4>
+        </div>
+      </div>
+
+      <!-- trousers -->
+
+      <div class="product-container" id="trousers">
+        <!-- Trouser product 1 -->
+        <div class="product-content">
+          <div class="img-container">
+            <img src="Beltless trouser.png" alt="" />
+            <a href="" class="cart-btn"
+              ><p><i class="bx bxs-cart"></i>Add to Cart</p></a
+            >
+          </div>
+          <h3>Beltless Pant Trouser</h3>
+          <h4>#5000</h4>
+        </div>
+        <!--Trouser product 2 -->
+        <div class="product-content">
+          <div class="img-container">
+            <img src="Beltless trouser 2.png" alt="" />
+            <a href="" class="cart-btn"
+              ><p><i class="bx bxs-cart"></i>Add to Cart</p></a
+            >
+          </div>
+          <h3>Beltless Pant Trouser</h3>
+          <h4>#5000</h4>
+        </div>
+        <!-- Trouser product 3 -->
+        <div class="product-content">
+          <div class="img-container">
+            <img src="Jean trouser.png" alt="" />
+            <a href="" class="cart-btn"
+              ><p><i class="bx bxs-cart"></i>Add to Cart</p></a
+            >
+          </div>
+          <h3>Jean Trouser</h3>
+          <h4>#5000</h4>
+        </div>
+        <!--Trouser product 4 -->
+        <div class="product-content">
+          <div class="img-container">
+            <img src="Jean trouser 2.png" alt="" />
+            <a href="" class="cart-btn"
+              ><p><i class="bx bxs-cart"></i>Add to Cart</p></a
+            >
+          </div>
+          <h3>Jean Trouser</h3>
+          <h4>#5000</h4>
+        </div>
+      </div>
+
+      <!-- Native wears -->
+
+      <div class="product-container" id="native">
+        <!-- Native product 1 -->
+        <div class="product-content">
+          <div class="img-container">
+            <img src="Native gown.jpg" alt="" />
+            <a href="" class="cart-btn"
+              ><p><i class="bx bxs-cart"></i>Add to Cart</p></a
+            >
+          </div>
+          <h3>Native</h3>
+          <h4>#7500</h4>
+        </div>
+        <!--Native product 2 -->
+        <div class="product-content">
+          <div class="img-container">
+            <img src="Native 8.jpg" alt="" />
+            <a href="" class="cart-btn"
+              ><p><i class="bx bxs-cart"></i>Add to Cart</p></a
+            >
+          </div>
+          <h3>Native</h3>
+          <h4>#7500</h4>
+        </div>
+        <!-- Native product 3 -->
+        <div class="product-content">
+          <div class="img-container">
+            <img src="Native 7.jpg" alt="" />
+            <a href="" class="cart-btn"
+              ><p><i class="bx bxs-cart"></i>Add to Cart</p></a
+            >
+          </div>
+          <h3>Native</h3>
+          <h4>#7500</h4>
+        </div>
+        <!--Native product 4 -->
+        <div class="product-content">
+          <div class="img-container">
+            <img src="Native 6.jpg" alt="" />
+            <a href="" class="cart-btn"
+              ><p><i class="bx bxs-cart"></i>Add to Cart</p></a
+            >
+          </div>
+          <h3>Native</h3>
+          <h4>#7500</h4>
+        </div>
+      </div>
+
+      <!-- Female wears -->
+
+      <div class="product-container" id="femalewears">
+        <!-- female product 1 -->
+        <div class="product-content">
+          <div class="img-container">
+            <img src="Ladies gown.jpg" alt="" />
+            <a href="" class="cart-btn"
+              ><p><i class="bx bxs-cart"></i>Add to Cart</p></a
+            >
+          </div>
+          <h3>Ladies Gown</h3>
+          <h4>#8500</h4>
+        </div>
+        <!--female product 2 -->
+        <div class="product-content">
+          <div class="img-container">
+            <img src="Ladies gown 2.jpg" alt="" />
+            <a href="" class="cart-btn"
+              ><p><i class="bx bxs-cart"></i>Add to Cart</p></a
+            >
+          </div>
+          <h3>Ladies Gown</h3>
+          <h4>#8500</h4>
+        </div>
+        <!-- female product 3 -->
+        <div class="product-content">
+          <div class="img-container">
+            <img src="Ladies gown 3.jpg" alt="" />
+            <a href="" class="cart-btn"
+              ><p><i class="bx bxs-cart"></i>Add to Cart</p></a
+            >
+          </div>
+          <h3>Ladies Gown</h3>
+          <h4>#8500</h4>
+        </div>
+        <!-- female product 4 -->
+        <div class="product-content">
+          <div class="img-container">
+            <img src="vin.jpg" alt="" />
+            <a href="" class="cart-btn"
+              ><p><i class="bx bxs-cart"></i>Add to Cart</p></a
+            >
+          </div>
+          <h3>Ladies Gown</h3>
+          <h4>#8500</h4>
+        </div>
+      </div>
+    </section>
+    {% comment %} PRODUCT SECTION END {% endcomment %}
+
+    {% comment %} CART SECTION LAYER START {% endcomment %}
+    <div class="cart-overlay">
+      <div class="cart">
+        <i class="bx bx-x"></i>
+        <h2>Your Cart</h2>
+        <div class="cart-content">
+          <img src="Men shirt 1.png" alt="" />
+          <div class="cart-details">
+            <h3>Coperate Shirt</h3>
+            <h4>#7500</h4>
+            <span class="cart-remove">remove</span>
+          </div>
+          <div class="cart-count">
+            <i class="bx bx-chevron-up"></i>
+            <p class="counting">0</p>
+            <i class="bx bx-chevron-down"></i>
+          </div>
+        </div>
+        <h4 class="total-btn">Your Total: #0</h4>
+        <div class="cart-btn">
+          <button class="remove-button">Remove Items</button>
+          <button class="checkout-btn">Go to Check-out</button>
+        </div>
+      </div>
+    </div>
+    {% comment %} CART SECTION LAYER END {% endcomment %}
+
+    {% comment %} NEWLY ARRIVAL SECTION START {% endcomment %}
+    <section class="newarrival" id="newarrivals">
+      <div class="heading">
+        <h2>New Arrivals</h2>
+      </div>
+      <div class="arrival-container">
+        <div class="image-container">
+          <img src="new 1.png" alt="" />
+          <div class="arrival-details">
+            <div class="shirt-name">
+              <h3>Shirt</h3>
+              <div class="star-icon">
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+              </div>
+            </div>
+            <div class="arrival-btn">
+              <h4>#7500</h4>
+              <a href="#"><i class="bx bxs-cart"></i>Buy Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="image-container">
+          <img src="new 2.png" alt="" />
+          <div class="arrival-details">
+            <div class="shirt-name">
+              <h3>Shirt</h3>
+              <div class="star-icon">
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+              </div>
+            </div>
+            <div class="arrival-btn">
+              <h4>#7500</h4>
+              <a href="#"><i class="bx bxs-cart"></i>Buy Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="image-container">
+          <img src="new 3.png" alt="" />
+          <div class="arrival-details">
+            <div class="shirt-name">
+              <h3>Shirt</h3>
+              <div class="star-icon">
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+              </div>
+            </div>
+            <div class="arrival-btn">
+              <h4>#7500</h4>
+              <a href="#"><i class="bx bxs-cart"></i>Buy Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="image-container">
+          <img src="new 4.png" alt="" />
+          <div class="arrival-details">
+            <div class="shirt-name">
+              <h3>Shirt</h3>
+              <div class="star-icon">
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+              </div>
+            </div>
+            <div class="arrival-btn">
+              <h4>#7500</h4>
+              <a href="#"><i class="bx bxs-cart"></i>Buy Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="image-container">
+          <img src="F Men shirt 4.jpg" alt="" />
+          <div class="arrival-details">
+            <div class="shirt-name">
+              <h3>Shirt</h3>
+              <div class="star-icon">
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+              </div>
+            </div>
+            <div class="arrival-btn">
+              <h4>#7500</h4>
+              <a href="#"><i class="bx bxs-cart"></i>Buy Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="image-container">
+          <img src="F men shirt 3.png" alt="" />
+          <div class="arrival-details">
+            <div class="shirt-name">
+              <h3>Shirt</h3>
+              <div class="star-icon">
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+              </div>
+            </div>
+            <div class="arrival-btn">
+              <h4>#7500</h4>
+              <a href="#"><i class="bx bxs-cart"></i>Buy Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="image-container">
+          <img src="F Men shirt  2.png" alt="" />
+          <div class="arrival-details">
+            <div class="shirt-name">
+              <h3>Shirt</h3>
+              <div class="star-icon">
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+              </div>
+            </div>
+            <div class="arrival-btn">
+              <h4>#7500</h4>
+              <a href="#"><i class="bx bxs-cart"></i>Buy Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="image-container">
+          <img src="F Men shirt 1.png" alt="" />
+          <div class="arrival-details">
+            <div class="shirt-name">
+              <h3>Shirt</h3>
+              <div class="star-icon">
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+              </div>
+            </div>
+            <div class="arrival-btn">
+              <h4>#7500</h4>
+              <a href="#"><i class="bx bxs-cart"></i>Buy Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    {% comment %} NEWLY ARRIVAL SECTION END {% endcomment %}
+
+    {% comment %} ABOUT SECTION START {% endcomment %}
+    <section class="about" id="about">
+      <div class="about-container">
+        <div class="about-img">
+          <img src="about img.jpg" alt="" />
+        </div>
+        <div class="about-text">
+          <div class="heading2">
+            <h1>Welcome to Joam Collections</h1>
+          </div>
+          <p>
+            Joam Collections was founded with a vision to redefine the fashion
+            landscape. What started as a small venture has now blossomed into a
+            brand that stands for quality, innovation, and a commitment to our
+            customers. We take pride in offering a diverse range of clothing
+            that caters to every occasion and personal style.
+          </p>
+          <p class="mission">
+            <b>Mission:</b> Our mission is to empower individuals to embrace
+            their unique style by providing clothing that not only looks good
+            but also feels exceptional. We believe that fashion should be an
+            expression of one's personality, and our goal is to make that
+            experience enjoyable and accessible.
+          </p>
+          <p class="vision">
+            <b>Vision:</b> We aspire to be a global leader in the fashion
+            industry, known for our commitment to sustainable practices,
+            innovation, and customer satisfaction. Our vision extends beyond
+            trends – we aim to inspire confidence and self-expression through
+            our clothing.
+          </p>
+        </div>
+      </div>
+    </section>
+    {% comment %} ABOUT SECTION END {% endcomment %}
+
+    {% comment %} CONTACT SECTION START {% endcomment %}
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <h2 class="heading">Contact Us</h2>
+        <p>Got a question or feedback? We'd love to hear from you!</p>
+        <form action="#" method="post" class="contact-form">
+          <div class="form-group">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="message">Your Message:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn">Send Message</button>
+        </form>
+      </div>
+    </section>
+    {% comment %} CONTACT SECTION END {% endcomment %}
+
+    <!-- Footers -->
+
+    <section class="footer">
+      <div class="footer-container">
+        <!-- Box 1 -->
+        <div class="footer-box address">
+          <h4 class="brand">Joam Collections</h4>
+          <p>
+            Sign up for marketing emails to receive 10% off your first purchase.
+          </p>
+          <form action="">
+            <input type="email" placeholder="Email Address" />
+            <button><i class="bx bx-chevron-right"></i></button>
+          </form>
+          <div class="social">
+            <i class="bx bxl-facebook"></i>
+            <i class="bx bxl-whatsapp"></i>
+            <i class="bx bxl-instagram"></i>
+            <i class="bx bxl-twitter"></i>
+          </div>
+        </div>
+        <!-- Box 2 -->
+        <div class="footer-box">
+          <h4>Support</h4>
+          <li><a href="#">Products</a></li>
+          <li><a href="#">Shop New Arrivals</a></li>
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Terms of sale</a></li>
+        </div>
+        <!-- Box 3 -->
+        <div class="footer-box help-box">
+          <h4>Help</h4>
+          <li><a href="#">FAQs</a></li>
+          <li><a href="#">Shipping and Delivery</a></li>
+          <li><a href="#">Order Status</a></li>
+          <li><a href="#">Returns and Exchanges</a></li>
+        </div>
+        <!-- Box 4 -->
+        <div class="footer-box contact-box">
+          <h4>Contact</h4>
+          <div class="contact">
+            <span
+              ><i class="bx bxs-map"></i>Plot 25 Block 28, Kemta Housing Estate,
+              Idi-Aba, Abeokuta, Ogun state</span
+            >
+            <span><i class="bx bxs-phone"></i>+234 814 959 0180</span>
+            <span
+              ><a href=""><i class="bx bxs-envelope"></i></a
+              >info@joamcollections.com.ng sales@joamcollections.com.ng</span
+            >
+            <span
+              ><a href=""
+                ><i class="bx bxl-facebook"></i
+                ><i class="bx bxl-instagram"></i></a
+              >JOAM Collections</span
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- copyright -->
+    <div class="copyright">
+      <p>&#169; Joams Collections All Right Reserved</p>
+    </div>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script src="{{ url_for('static/scripts', filename='script.js') }}"></script>
+  </body>
+</html>
