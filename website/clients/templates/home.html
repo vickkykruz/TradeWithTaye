@@ -4,6 +4,7 @@
 {% endblock %}
 
 {% block content %}
+  {% if table == "Home"%}
   <!--- Banner Start --->
   <section class="py-3" style="background-image: url('{{ url_for('views.static', filename='images/background-pattern.jpg') }}');background-repeat: no-repeat;background-size: cover;">
       <div class="container-fluid">
@@ -36,7 +37,7 @@
                         <div class="content-wrapper col-md-7">
                           <div class="categories mb-3 pb-3">100% Dynamic</div>
                           <h3 class="banner-title">Brand New Executive Vehicles</h3>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim massa diam elementum.</p>
+                          <p>Drive into luxury and performance with TradewithTayeOJ Cars! Experience unmatched comfort, cutting-edge technology, and powerful efficiency in every journey!</p>
                           <a href="#" class="btn btn-outline-dark btn-lg text-uppercase fs-6 rounded-1">Shop Collection</a>
                         </div>
                         <div class="img-wrapper col-md-5">
@@ -50,7 +51,7 @@
                         <div class="content-wrapper col-md-7">
                           <div class="categories mb-3 pb-3">100% Quality</div>
                           <h3 class="banner-title">Luxury Fashion Style</h3>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim massa diam elementum.</p>
+                          <p>Turn heads with our stunning new dress! Elegant, trendy, and perfect for any occasion. Shop now and redefine your style!</p>
                           <a href="#" class="btn btn-outline-dark btn-lg text-uppercase fs-6 rounded-1">Shop Collection</a>
                         </div>
                         <div class="img-wrapper col-md-5">
@@ -144,7 +145,7 @@
                   <h3 class="category-title">Electronics & Technology</h3>
                 </a>
                 <a href="/product/indurial-suuplies" class="nav-link category-item swiper-slide">
-                  <img src="{{ url_for('views.static', filename='images/icon-animal-products-drumsticks.png') }}"  class="w-50" alt="Category Thumbnail">
+                  <img src="{{ url_for('views.static', filename='images/office.png') }}"  class="w-50" alt="Category Thumbnail">
                   <h3 class="category-title">Office & Industrial Supplies</h3>
                 </a>
                 <a href="/product/agriculture&agro_allied" class="nav-link category-item swiper-slide">
@@ -152,19 +153,19 @@
                   <h3 class="category-title">Agriculture & Agro-Allied Services</h3>
                 </a>
                 <a href="/product/constructed-real_estate" class="nav-link category-item swiper-slide">
-                  <img src="{{ url_for('views.static', filename='images/icon-vegetables-broccoli.png') }}"  class="w-50" alt="Category Thumbnail">
+                  <img src="{{ url_for('views.static', filename='images/real.png') }}"  class="w-50" alt="Category Thumbnail">
                   <h3 class="category-title">Construction & Real Estate</h3>
                 </a>
                 <a href="/product/energy_solution" class="nav-link category-item swiper-slide">
-                  <img src="{{ url_for('views.static', filename='images/icon-vegetables-broccoli.png') }}"  class="w-50" alt="Category Thumbnail">
+                  <img src="{{ url_for('views.static', filename='images/energy.png') }}"  class="w-50" alt="Category Thumbnail">
                   <h3 class="category-title">Energy Solutions</h3>
                 </a>
                 <a href="/product/oil-gas" class="nav-link category-item swiper-slide">
-                  <img src="{{ url_for('views.static', filename='images/icon-vegetables-broccoli.png') }}"  class="w-50" alt="Category Thumbnail">
+                  <img src="{{ url_for('views.static', filename='images/oil.png') }}"  class="w-50" alt="Category Thumbnail">
                   <h3 class="category-title">Oil & Gas</h3>
                 </a>
                 <a href="/product/fruits-veges" class="nav-link category-item swiper-slide">
-                  <img src="{{ url_for('views.static', filename='images/icon-vegetables-broccoli.png') }}"  class="w-50" alt="Category Thumbnail">
+                  <img src="{{ url_for('views.static', filename='images/fruits.png') }}"  class="w-50" alt="Category Thumbnail">
                   <h3 class="category-title">Fruits & Veges</h3>
                 </a>
               </div>
@@ -749,7 +750,7 @@
                 <div class="section-header">
                   <h2 class="section-title display-4">Get <span class="text-primary">25% Discount</span> on your first purchase</h2>
                 </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dictumst amet, metus, sit massa posuere maecenas. At tellus ut nunc amet vel egestas.</p>
+                <p>Discover the joy of convenient and affordable shopping at your fingertips! Our e-commerce platform offers a seamless experience, unbeatable deals, and an extensive range of products to suit all your needs.</p>
               </div>
               <div class="col-md-6 p-5">
                 <form>
@@ -946,7 +947,7 @@
               </div>
               <div class="card-body">
                 <div class="post-meta d-flex text-uppercase gap-3 my-2 align-items-center">
-                  <div class="meta-date"><svg width="16" height="16"><use xlink:href="#calendar"></use></svg>22 Aug 2021</div>
+                  <div class="meta-date"><svg width="16" height="16"><use xlink:href="#calendar"></use></svg>4 Dec 2024</div>
                   <div class="meta-categories"><svg width="16" height="16"><use xlink:href="#category"></use></svg>tips & tricks</div>
                 </div>
                 <div class="post-header">
@@ -967,7 +968,7 @@
               </div>
               <div class="card-body">
                 <div class="post-meta d-flex text-uppercase gap-3 my-2 align-items-center">
-                  <div class="meta-date"><svg width="16" height="16"><use xlink:href="#calendar"></use></svg>25 Aug 2021</div>
+                  <div class="meta-date"><svg width="16" height="16"><use xlink:href="#calendar"></use></svg>4 Dec 2024</div>
                   <div class="meta-categories"><svg width="16" height="16"><use xlink:href="#category"></use></svg>trending</div>
                 </div>
                 <div class="post-header">
@@ -988,7 +989,7 @@
               </div>
               <div class="card-body">
                 <div class="post-meta d-flex text-uppercase gap-3 my-2 align-items-center">
-                  <div class="meta-date"><svg width="16" height="16"><use xlink:href="#calendar"></use></svg>28 Aug 2021</div>
+                  <div class="meta-date"><svg width="16" height="16"><use xlink:href="#calendar"></use></svg>4 Dec 2024</div>
                   <div class="meta-categories"><svg width="16" height="16"><use xlink:href="#category"></use></svg>inspiration</div>
                 </div>
                 <div class="post-header">
@@ -1017,7 +1018,7 @@
               </div>
               <div class="col-md-8">
                 <h2 class="my-5">Shop faster with TradewithTayeOJ</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis sed ptibus liberolectus nonet psryroin. Amet sed lorem posuere sit iaculis amet, ac urna. Adipiscing fames semper erat ac in suspendisse iaculis. Amet blandit tortor praesent ante vitae. A, enim pretiummi senectus magna. Sagittis sed ptibus liberolectus non et psryroin.</p>
+                <p>Elevate your style with our sleek, timeless wristwatch. Crafted for elegance and precision, it’s perfect for every occasion. Durable, stylish, and affordable Watch isn’t just an accessory; it’s a statement. Own the moment with every tick. Shop now and redefine sophistication!.</p>
                 <div class="d-flex gap-2 flex-wrap">
                   <!-- <img src="images/app-store.jpg" alt="app-store">
                   <img src="images/google-play.jpg" alt="google-play"> -->
@@ -1034,24 +1035,24 @@
     <section class="py-5">
       <div class="container-fluid">
         <h2 class="my-5">People are also looking for</h2>
-        <a href="#" class="btn btn-warning me-2 mb-2">Blue diamon almonds</a>
+        <a href="#" class="btn btn-warning me-2 mb-2">Tesla</a>  <!--MR VICTOR-->
+        <a href="#" class="btn btn-warning me-2 mb-2">Rolex</a>             <!--MR VICTOR-->
+        <a href="#" class="btn btn-warning me-2 mb-2">Mercedes-Benz</a>             <!--MR VICTOR-->
+        <a href="#" class="btn btn-warning me-2 mb-2">Chobani Greek Yogurt</a>
+        <a href="#" class="btn btn-warning me-2 mb-2">Tag Heuer</a>                     <!--MR VICTOR-->
+        <a href="#" class="btn btn-warning me-2 mb-2">Foster Farms Takeout Crispy wings</a>
+        <a href="#" class="btn btn-warning me-2 mb-2">Ferrari</a>                             <!--MR VICTOR-->
+        <a href="#" class="btn btn-warning me-2 mb-2">Build-A-Bear</a>                        <!--MR VICTOR-->
+        <a href="#" class="btn btn-warning me-2 mb-2">Chicken meatballs</a>
+        <a href="#" class="btn btn-warning me-2 mb-2">Century 21</a>                        <!--MR VICTOR-->
         <a href="#" class="btn btn-warning me-2 mb-2">Angie’s Boomchickapop Corn</a>
         <a href="#" class="btn btn-warning me-2 mb-2">Salty kettle Corn</a>
-        <a href="#" class="btn btn-warning me-2 mb-2">Chobani Greek Yogurt</a>
+        <a href="#" class="btn btn-warning me-2 mb-2">Vermont Teddy Bear</a>                  <!--MR VICTOR-->
         <a href="#" class="btn btn-warning me-2 mb-2">Sweet Vanilla Yogurt</a>
         <a href="#" class="btn btn-warning me-2 mb-2">Foster Farms Takeout Crispy wings</a>
-        <a href="#" class="btn btn-warning me-2 mb-2">Warrior Blend Organic</a>
+        <a href="#" class="btn btn-warning me-2 mb-2">Keller Williams</a>                       <!--MR VICTOR-->
         <a href="#" class="btn btn-warning me-2 mb-2">Chao Cheese Creamy</a>
-        <a href="#" class="btn btn-warning me-2 mb-2">Chicken meatballs</a>
-        <a href="#" class="btn btn-warning me-2 mb-2">Blue diamon almonds</a>
-        <a href="#" class="btn btn-warning me-2 mb-2">Angie’s Boomchickapop Corn</a>
-        <a href="#" class="btn btn-warning me-2 mb-2">Salty kettle Corn</a>
-        <a href="#" class="btn btn-warning me-2 mb-2">Chobani Greek Yogurt</a>
-        <a href="#" class="btn btn-warning me-2 mb-2">Sweet Vanilla Yogurt</a>
-        <a href="#" class="btn btn-warning me-2 mb-2">Foster Farms Takeout Crispy wings</a>
-        <a href="#" class="btn btn-warning me-2 mb-2">Warrior Blend Organic</a>
-        <a href="#" class="btn btn-warning me-2 mb-2">Chao Cheese Creamy</a>
-        <a href="#" class="btn btn-warning me-2 mb-2">Chicken meatballs</a>
+        <a href="#" class="btn btn-warning me-2 mb-2">BMW</a> 
       </div>
     </section>
 
@@ -1136,4 +1137,216 @@
         </div>
       </div>
     </section>
+   {% elif table == "About Us" %}
+   <section class="py-3 py-md-5">
+      <div class="container">
+        <div class="row gy-3 gy-md-4 gy-lg-0 align-items-lg-center">
+        <div class="col-12 order-lg-2 col-lg-6 text-end">
+          <img class="img-fluid rounded" loading="lazy" src="{{ url_for('views.static', filename='images/c.jpeg') }}" alt="About ">
+        </div>
+        <div class="col-12 col-lg-6">
+          <div class="row justify-content-xl-center">
+          <div class="col-12 col-xl-10">
+            <h2 class="mb-3">About Us?</h2>
+            <div class="d-flex align-items-center mb-3">
+            <div class="me-3 text-primary p-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+              <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path>
+              </svg>
+            </div>
+            <div>
+              <p class="fs-5 m-0"> Welcome to <strong>TradeWithTayeOJ</strong>, your trusted partner in the world of global trade. As a premier import and export company, we specialize in connecting markets, bridging cultures, and delivering exceptional value to businesses across the globe.
+              </p>
+            </div>
+            </div>
+            <div class="d-flex align-items-center mb-3">
+            <div class="me-3 text-primary p-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+              <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path>
+              </svg>
+            </div>
+            <div>
+              <p class="fs-5 m-0"> Founded with a vision to redefine international commerce, TradeWithTayeOJ prides itself on a foundation of integrity, efficiency, and excellence. We offer a seamless trading experience, ensuring that our clients receive high-quality products and services tailored to their unique needs.
+              </p>
+            </div>
+            </div>
+            <div class="d-flex align-items-center mb-4 mb-xl-5">
+            <div class="me-3 text-primary p-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+              <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path>
+              </svg>
+            </div>
+            <div>
+              <p class="fs-5 m-0">Join hands with <strong>TradeWithTayeOJ</strong> and experience the power of international trade done right. Together, we can turn opportunities into achievements and create pathways for global success.
+              </p>
+            </div>
+            </div>
+           <!--  <button type="button" class="btn bsb-btn-xl btn-outline-primary rounded-pill">Connect Now</button>-->
+          </div>
+          </div>
+        </div>
+        </div>
+      </div>
+      </section>
+
+
+
+
+
+
+    <section class="py-3 py-md-5">
+      <div class="container">
+        <div class="row gy-3 gy-md-4 gy-lg-0 align-items-lg-center">
+        <div class="col-12 col-lg-6">
+          <img class="img-fluid rounded" loading="lazy" src="{{ url_for('views.static', filename='images/sg.jpeg') }}" alt="About ">
+        </div>
+        <div class="col-12 col-lg-6">
+          <div class="row justify-content-xl-center">
+          <div class="col-12 col-xl-10">
+            <h2 class="mb-3">Why Choose Us?</h2>
+            <div class="d-flex align-items-center mb-3">
+            <div class="me-3 text-primary p-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+              <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path>
+              </svg>
+            </div>
+            <div>
+              <p class="fs-5 m-0"> Global Network: Our extensive connections across multiple industries and regions enable us to deliver competitive advantages for your business.</p>
+            </div>
+            </div>
+            <div class="d-flex align-items-center mb-3">
+            <div class="me-3 text-primary p-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+              <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path>
+              </svg>
+            </div>
+            <div>
+              <p class="fs-5 m-0"> Commitment to Quality: Every transaction is handled with precision and attention to detail, ensuring top-tier service and satisfaction.</p>
+            </div>
+            </div>
+            <div class="d-flex align-items-center mb-4 mb-xl-5">
+            <div class="me-3 text-primary p-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+              <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path>
+              </svg>
+            </div>
+            <div>
+              <p class="fs-5 m-0">Client-Centric Approach: We put our clients at the heart of everything we do, building long-term relationships based on trust and reliability.</p>
+            </div>
+            </div>
+           <!--  <button type="button" class="btn bsb-btn-xl btn-outline-primary rounded-pill">Connect Now</button>-->
+          </div>
+          </div>
+        </div>
+        </div>
+      </div>
+      </section>
+
+
+
+
+
+
+
+
+      <section class="py-3 py-md-5">
+        <div class="container">
+          <div class="row gy-3 gy-md-4 gy-lg-0 align-items-lg-center">
+          <div class="col-12 order-lg-2 col-lg-6 text-end">
+            <img class="img-fluid rounded" loading="lazy" src="{{ url_for('views.static', filename='images/f.jpeg') }}" alt="About ">
+          </div>
+          <div class="col-12 col-lg-6">
+            <div class="row justify-content-xl-center">
+            <div class="col-12 col-xl-10">
+              <h2 class="mb-3">Our Mission</h2>
+              <div class="d-flex align-items-center mb-3">
+              <div class="me-3 text-primary p-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path>
+                </svg>
+              </div>
+              <div>
+                <p class="fs-5 m-0">  At <strong>TradeWithTayeOJ</strong>,our mission is to foster international partnerships by facilitating the smooth exchange of goods and services. We are committed to empowering businesses with reliable supply chains and innovative trade solutions that drive growth and mutual success.
+                </p>
+              </div>
+              </div>
+              <div class="d-flex align-items-center mb-3">
+              <div class="me-3 text-primary p-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path>
+                </svg>
+              </div>
+              <div>
+                <p class="fs-5 m-0">  Facilitating seamless global trade by connecting businesses to quality products with efficiency and reliability.</p>
+              </div>
+              </div>
+              <div class="d-flex align-items-center mb-4 mb-xl-5">
+              <div class="me-3 text-primary p-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path>
+                </svg>
+              </div>
+              <div>
+                <p class="fs-5 m-0">Promoting sustainable growth through transparent, ethical, and innovative import-export practices worldwide.</p>
+              <!-- <p class="fs-5 text-justify">
+          Let’s trade together. Let’s grow together.
+          TradeWithTayeOJ – Your Gateway to Global Commerce.</p> -->
+        </div>
+              </div>
+             <!--  <button type="button" class="btn bsb-btn-xl btn-outline-primary rounded-pill">Connect Now</button>-->
+            </div>
+            </div>
+          </div>
+          </div>
+        </div>
+    </section>
+   {% elif table == "Contact Us" %}
+   <section>
+    <div class="page-banner contact-page">
+      <div class="container-fuild">
+          <div class="row m-lr0">
+    <div class="col-lg-6 col-md-6 p-lr0 d-flex">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4503.851277753799!2d39.9142986!3d43.4407693!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40f5bf974fda8ce5%3A0x8634711050c31962!2sKirpichnaya%20St%2C%2075%2C%20Bolshoy%20Sochi%2C%20Krasnodarskiy%20kray%2C%20Russia%2C%20354340!5e1!3m2!1sen!2sng!4v1732570974685!5m2!1sen!2sng" class="align-self-stretch d-flex" style="width:100%; width:100%; min-height: 300px;" allowfullscreen=""></iframe>
+    </div>
+    <div class="col-lg-6 col-md-6 section-sp2 p-lr30">
+      
+      <form class="contact-bx" action="/rukatech/contact/" method="POST">
+      <input type="hidden" name="csrfmiddlewaretoken" value="J964bD00A4KSltQoSgbz4NFPmJotsrH4p6RbiFNeeY3i1PIZLpIE7sABhzckL99U">
+      <div class="ajax-message"></div>
+        <div class="heading-bx left p-r15">
+          <h2 class="title-head">|Get In <span>Touch</span></h2>
+          <p>We’d love to hear from you! Whether you have questions about our services, need assistance with your shipment, or want more information about TradewithTayeOJ, our team is here to help. Please fill out the contact form below with your details and inquiry, and we’ll get back to you as soon as possible. Your feedback and questions are important to us, and we are committed to providing you with the support you need to simplify and enhance your import and export experience. Thank you for reaching out to TradewithTayeOJ!</p>
+        </div>
+
+
+
+
+        <div class="container mt-5">
+          <form>
+              <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="name" placeholder="Your Full Name" required>
+                  <label for="name">Your Full Name</label>
+              </div>
+              <div class="form-floating mb-3">
+                  <input type="email" class="form-control" id="email" placeholder="Your Email Address" required>
+                  <label for="email">Your Email Address</label>
+              </div>
+              <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="subject" placeholder="Subject" required>
+                  <label for="subject">Subject</label>
+              </div>
+              <div class="form-floating mb-3">
+                  <textarea class="form-control" id="message" placeholder="Your Message" style="height: 150px;" required></textarea>
+                  <label for="message">Your Message</label>
+              </div>
+              <div class="text-center">
+                  <button type="submit" class="btn btn-primary">Send Message</button>
+              </div>
+      </form>
+    </div>
+  </div>
+      </div>
+</div>
+   </section>
+   {% endif %}
 {% endblock %}

@@ -97,7 +97,7 @@ def about_us():
     session_status = False
     user_data = None
     title = "Trade With TayeOJ || Product"
-    table = "Product"
+    table = "About Us"
 
     if 'bind_id' in session:
         session_status = True
@@ -119,7 +119,7 @@ def contact_us():
     session_status = False
     user_data = None
     title = "Trade With TayeOJ || Product"
-    table = "ContactUs"
+    table = "Contact Us"
 
     return render_template(
         "home.html",
